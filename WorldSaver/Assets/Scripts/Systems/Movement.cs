@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Obi;
 
 public class Movement : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class Movement : MonoBehaviour
     private float vInput;
     private float hInput;
 
+    public ObiRope OR;
+    public ObiStructuralElement rope;
+
     [SerializeField] //gør bool public for inspectoren i unity, men ikke tilgængelig for andre scripts.
     bool isPlayerOne;
 
@@ -20,6 +24,9 @@ public class Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        rope = OR.GetComponent<ObiStructuralElement>();
+
+
     }
 
     // Update is called once per frame
