@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour
     private float vInput;
     private float hInput;
 
-    [SerializeField]
+    [SerializeField] //gør bool public for inspectoren i unity, men ikke tilgængelig for andre scripts.
     bool isPlayerOne;
 
 
@@ -25,12 +25,12 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isPlayerOne)
+        if(isPlayerOne) //Player1 movement. "Vertical" and "Horizontal" are controls decided in unity's Input Manager.
         {
             vInput = Input.GetAxis("Vertical") * moveSpeed;
             hInput = Input.GetAxis("Horizontal") * rotateSpeed;
         }
-        else
+        else //Player 2 movement. "Vertical2" and "Horizontal2" are controls decided in unity's Input Manager.
         {
             vInput = Input.GetAxis("Vertical2") * moveSpeed;
             hInput = Input.GetAxis("Horizontal2") * rotateSpeed;
@@ -38,12 +38,11 @@ public class Movement : MonoBehaviour
         
     }
 
-    private void FixedUpdate()
+    private void FixedUpdate() //Any physics- or Rigidbody-related code always goes inside FixedUpdate.
     {
-        Vector3 rotation = Vector3.up * hInput;
-        // 3
-        Quaternion angleRot = Quaternion.Euler(rotation *
-        Time.fixedDeltaTime);
+        Vector3 rotation = Vector3.up * hInput; //Decides the rotation with a Vector 3 variable.
+        
+        Quaternion angleRot = Quaternion.Euler(rotation * Time.fixedDeltaTime); 
         // 4
         rb.MovePosition(this.transform.position + this.transform.forward * vInput * Time.fixedDeltaTime);
         // 5
