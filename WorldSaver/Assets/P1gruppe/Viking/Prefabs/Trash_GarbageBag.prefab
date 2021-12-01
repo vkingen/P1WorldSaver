@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2821742480532753212}
   - component: {fileID: 2790101756579207211}
   - component: {fileID: 4174602117577672616}
-  - component: {fileID: -7044878686626395098}
   m_Layer: 0
   m_Name: Trash_GarbageBag
   m_TagString: Plastic
@@ -95,19 +94,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kinematicForParticles: 0
---- !u!114 &-7044878686626395098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1557441005439373498}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24de80bc0f8b7e54e96615e605aa0a8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveDir: {x: 0, y: 0, z: -0.5}
 --- !u!1 &7732085925092816303
 GameObject:
   m_ObjectHideFlags: 0
