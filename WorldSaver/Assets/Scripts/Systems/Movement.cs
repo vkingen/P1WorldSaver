@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Obi;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -16,15 +17,22 @@ public class Movement : MonoBehaviour
     public ObiRope OR;
     public ObiStructuralElement rope;
 
-    [SerializeField] //gør bool public for inspectoren i unity, men ikke tilgængelig for andre scripts.
+    public Transform p1, p2;
+
+    [Range(0,20)] //Creates a visual sliding bar in the inspector named 'distance'. 
+    public float distance;
+    public float distanceToTear = 20;
+
+    bool isTeared = false;
+
+    [SerializeField] //Makes the bool public in the inspector in unity but not accessible for other scripts.
     bool isPlayerOne;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rope = OR.GetComponent<ObiStructuralElement>();
+        //rope = OR.GetComponent<ObiStructuralElement>();
 
 
     }
@@ -45,15 +53,28 @@ public class Movement : MonoBehaviour
         
     }
 
-    private void FixedUpdate() //Any physics- or Rigidbody-related code always goes inside FixedUpdate.
+    void Tear() //Measures the distance between the players and enables tearing when 'distance' becomes greater than 'distanceToTear'.
     {
+        distance = Vector3.Distance(p1.position, p2.position); //Measures the distance between the players.
+        if (distance > distanceToTear)
+        {
+            OR.tearingEnabled = true;
+
+            Application.LoadLevel(Application.loadedLevel); //temporary
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        Tear();
+
         Vector3 rotation = Vector3.up * hInput; //Decides the rotation with a Vector 3 variable.
         
-        Quaternion angleRot = Quaternion.Euler(rotation * Time.fixedDeltaTime); 
-        // 4
-        rb.MovePosition(this.transform.position + this.transform.forward * vInput * Time.fixedDeltaTime);
-        // 5
-        rb.MoveRotation(rb.rotation * angleRot);
+        Quaternion angleRot = Quaternion.Euler(rotation * Time.fixedDeltaTime); //Page 194, in C# book
+
+        rb.MovePosition(this.transform.position + this.transform.forward * vInput * Time.fixedDeltaTime); //Page 194, in C# book
+       
+        rb.MoveRotation(rb.rotation * angleRot); //Page 194, in C# book
     }
 
 }
