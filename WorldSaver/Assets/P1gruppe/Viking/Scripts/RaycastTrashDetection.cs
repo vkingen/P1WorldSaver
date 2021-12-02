@@ -16,6 +16,9 @@ public class RaycastTrashDetection : MonoBehaviour
 
     public Transform p1, p2;
 
+    InGameUI IGUI;
+    
+
     private void Start()
     {
         movementScript = GetComponent<Movement>();
@@ -28,6 +31,9 @@ public class RaycastTrashDetection : MonoBehaviour
         lR.positionCount = 2;
         lR.useWorldSpace = true;
         lR.material = new Material(Shader.Find("Sprites/Default"));
+
+        IGUI = FindObjectOfType<InGameUI>();
+        IGUI.plasticPickUp();
     }
 
     private void FixedUpdate()
@@ -56,6 +62,7 @@ public class RaycastTrashDetection : MonoBehaviour
             {
                 Debug.Log(hit.transform.name + " is picked up");
                 Destroy(hit.transform.gameObject);
+                InGameUI.instance.plasticPickUp();
             }
         }
 

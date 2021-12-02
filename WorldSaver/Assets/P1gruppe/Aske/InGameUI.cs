@@ -13,8 +13,12 @@ public class InGameUI : MonoBehaviour
     public float removeFuel = 1;
     private float fullFuel = 100;
 
+    public float plasticCollected = 0;
+    public float addPlastic = 1;
+
 
     public Slider playerOneFuelSlider, playerTwoFuelSlider;
+    public Slider plasticMeter;
     //public GameObject healthIconP1, healthIconP2;
 
     //private void Awake()
@@ -34,6 +38,7 @@ public class InGameUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        plasticMeter.value = plasticCollected;
         playerOneFuelSlider.value = playerOneFuel;
         playerTwoFuelSlider.value = playerTwoFuel;
     }
@@ -82,5 +87,11 @@ public class InGameUI : MonoBehaviour
     {
         playerTwoFuel = playerTwoFuel - removeFuel * Time.deltaTime;
         playerTwoFuelSlider.value = playerTwoFuel;
+    }
+
+    public void plasticPickUp()
+    {
+        plasticCollected = plasticCollected + addPlastic;
+        plasticMeter.value = plasticCollected;
     }
 }

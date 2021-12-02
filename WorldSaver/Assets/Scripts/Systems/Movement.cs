@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
+    InGameUI IGUI;
+    private float playerOneFuel;
+    private float playerTwoFuel;
 
     Rigidbody rb;
     public float moveSpeed;
@@ -29,7 +32,13 @@ public class Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        
+
+        IGUI = FindObjectOfType<InGameUI>();
+        //IGUI.ShowUI();
+
+        playerOneFuel = GameObject.Find("InGameUI").GetComponent<InGameUI>().playerOneFuel;
+        playerTwoFuel = GameObject.Find("InGameUI").GetComponent<InGameUI>().playerTwoFuel;
+
     }
 
     // Update is called once per frame
@@ -39,11 +48,19 @@ public class Movement : MonoBehaviour
         {
             vInput = Input.GetAxis("Vertical") * moveSpeed;
             hInput = Input.GetAxis("Horizontal") * rotateSpeed;
+            if (vInput != 0 || hInput != 0)
+            {
+                IGUI.RemoveFuelPlayerOne();
+            }
         }
         else //Player 2 movement. "Vertical2" and "Horizontal2" are controls decided in unity's Input Manager.
         {
             vInput = Input.GetAxis("Vertical2") * moveSpeed;
             hInput = Input.GetAxis("Horizontal2") * rotateSpeed;
+            if (vInput != 0 || hInput != 0)
+            {
+                IGUI.RemoveFuelPlayerTwo();
+            }
         }
         
     }
@@ -52,8 +69,6 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
-
         Vector3 rotation = Vector3.up * hInput; //Decides the rotation with a Vector 3 variable.
         
         Quaternion angleRot = Quaternion.Euler(rotation * Time.fixedDeltaTime); //Page 194, in C# book
