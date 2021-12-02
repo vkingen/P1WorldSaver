@@ -16,19 +16,19 @@ public class InGameUI : MonoBehaviour
     public Slider playerOneFuelSlider, playerTwoFuelSlider;
     //public GameObject healthIconP1, healthIconP2;
 
-    private void Awake()
-    {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+    //private void Awake()
+    //{
+    //    if (instance != null)
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //    else
+    //    {
+    //        instance = this;
+    //        DontDestroyOnLoad(gameObject);
+    //    }
 
-    }
+    //}
 
     // Start is called before the first frame update
     void Start()
@@ -61,13 +61,13 @@ public class InGameUI : MonoBehaviour
             SceneManager.LoadScene("P1Wins");
         }
     }
-    public void ShowUI()
+    /*  public void ShowUI()
     {
         playerOneFuelSlider.gameObject.SetActive(true);
         playerTwoFuelSlider.gameObject.SetActive(true);
         //healthIconP1.SetActive(true);
         //healthIconP2.SetActive(true);
-    }
+    } */  
 
     public void RemoveFuelPlayerOne()
     {

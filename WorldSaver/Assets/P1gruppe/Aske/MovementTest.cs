@@ -61,9 +61,9 @@ public class MovementTest : MonoBehaviour
             vInput = Input.GetAxis("Vertical2") * moveSpeed;
             hInput = Input.GetAxis("Horizontal2") * rotateSpeed;
             if (rb.velocity.magnitude > 0)
-            {
-                InGameUI.instance.RemoveFuelPlayerTwo();
-            }
+                    {
+                        InGameUI.instance.RemoveFuelPlayerTwo();
+                    }
         }
         
     }
