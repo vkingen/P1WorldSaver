@@ -10,6 +10,10 @@ public class SpawnTrash : MonoBehaviour
 
     public GameObject[] trashPrefab;
     public int objectsToSpawn = 50;
+    private void Start()
+    {
+        center = transform.position;
+    }
 
     private void Update()
     {
