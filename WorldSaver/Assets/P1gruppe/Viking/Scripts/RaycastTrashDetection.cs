@@ -9,7 +9,12 @@ public class RaycastTrashDetection : MonoBehaviour
 
     Movement movementScript;
 
+    public float distance;
+    public float distanceToTear;
+
     LineRenderer lR;
+
+    public Transform p1, p2;
 
     private void Start()
     {
@@ -31,6 +36,16 @@ public class RaycastTrashDetection : MonoBehaviour
         lR.SetPosition(1, playerTwo.transform.position);
     }
 
+    void Tear() //Measures the distance between the players and enables tearing when 'distance' becomes greater than 'distanceToTear'.
+    {
+        distance = Vector3.Distance(p1.position, p2.position); //Measures the distance between the players.
+        if (distance > distanceToTear)
+        {
+            //Application.LoadLevel(Application.loadedLevel); //temporary
+            Debug.Log("ROPE TEAR");
+        }
+    }
+
     private void Update()
     {
         RaycastHit hit;
@@ -44,29 +59,25 @@ public class RaycastTrashDetection : MonoBehaviour
             }
         }
 
-        if(movementScript.distance > 0 && movementScript.distance < 5)
+        Tear();
+
+        if (distance > 0 && distance < 25)
         {
             lR.startColor = Color.green;
             lR.endColor = Color.green;
 
         }
-        else if(movementScript.distance > 5 && movementScript.distance < 10)
-        {
-            lR.startColor = Color.green;
-            lR.endColor = Color.green;
-
-        }
-        else if (movementScript.distance > 10 && movementScript.distance < 15)
+        else if(distance > 25 && distance < 50)
         {
             lR.startColor = Color.yellow;
             lR.endColor = Color.yellow;
+
         }
-        else if (movementScript.distance > 15 && movementScript.distance < 20)
+        else if (distance > 50 && distance < 75)
         {
+           
             lR.startColor = Color.red;
             lR.endColor = Color.red;
         }
-
-
     }
 }
