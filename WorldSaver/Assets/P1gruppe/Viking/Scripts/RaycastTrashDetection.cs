@@ -62,7 +62,7 @@ public class RaycastTrashDetection : MonoBehaviour
             {
                 Debug.Log(hit.transform.name + " is picked up");
                 Destroy(hit.transform.gameObject);
-                InGameUI.instance.plasticPickUp();
+                IGUI.plasticPickUp();
             }
         }
 
