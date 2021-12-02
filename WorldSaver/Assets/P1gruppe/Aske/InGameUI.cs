@@ -41,7 +41,7 @@ public class InGameUI : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (playerOneFuel == 0)
+        if (playerOneFuel <= 0)
         {
             Debug.Log("P1 fuel empty");
             playerOneFuel = fullFuel;
@@ -52,7 +52,7 @@ public class InGameUI : MonoBehaviour
             //healthIconP2.SetActive(false);
             SceneManager.LoadScene("P2Wins");
         }
-        else if (playerTwoFuel == 0)
+        else if (playerTwoFuel <= 0)
         {
             Debug.Log("P2 fuel empty");
             playerOneFuel = fullFuel;
