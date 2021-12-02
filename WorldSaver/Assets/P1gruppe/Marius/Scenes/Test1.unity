@@ -657,17 +657,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 7
   rotateSpeed: 100
-  OR: {fileID: 0}
-  rope:
-    particle1: 0
-    particle2: 0
-    restLength: 0
-    constraintForce: 0
-    tearResistance: 0
-  p1: {fileID: 257674725}
-  p2: {fileID: 476647433}
-  distance: 0
-  distanceToTear: 20
   isPlayerOne: 1
 --- !u!114 &224371138
 MonoBehaviour:
@@ -682,7 +671,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTwo: {fileID: 1201661765}
-  maxRange: 20
+  maxRange: 10
+  distance: 0
+  distanceToTear: 10
+  p1: {fileID: 224371131}
+  p2: {fileID: 1201661769}
 --- !u!120 &224371139
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -2317,17 +2310,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 7
   rotateSpeed: 100
-  OR: {fileID: 0}
-  rope:
-    particle1: 0
-    particle2: 0
-    restLength: 0
-    constraintForce: 0
-    tearResistance: 0
-  p1: {fileID: 257674725}
-  p2: {fileID: 476647433}
-  distance: 0
-  distanceToTear: 20
   isPlayerOne: 0
 --- !u!1 &1242016469
 GameObject:
