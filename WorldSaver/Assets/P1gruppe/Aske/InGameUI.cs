@@ -43,6 +43,7 @@ public class InGameUI : MonoBehaviour
     {
         if (playerOneFuel == 0)
         {
+            Debug.Log("P1 fuel empty");
             playerOneFuel = fullFuel;
             playerTwoFuel = fullFuel;
             playerOneFuelSlider.gameObject.SetActive(false);
@@ -53,6 +54,7 @@ public class InGameUI : MonoBehaviour
         }
         else if (playerTwoFuel == 0)
         {
+            Debug.Log("P2 fuel empty");
             playerOneFuel = fullFuel;
             playerTwoFuel = fullFuel;
             playerOneFuelSlider.gameObject.SetActive(false);
@@ -78,7 +80,7 @@ public class InGameUI : MonoBehaviour
 
     public void RemoveFuelPlayerTwo()
     {
-        playerTwoFuel -= removeFuel;
+        playerTwoFuel = playerTwoFuel - removeFuel * Time.deltaTime;
         playerTwoFuelSlider.value = playerTwoFuel;
-        }
+    }
 }
