@@ -8,10 +8,11 @@ public class InGameUI : MonoBehaviour
 {
     public static InGameUI instance;
 
-    public int playerOneFuel = 100;
-    public int playerTwoFuel = 100;
-    private int fullFuel = 100;
-    private int removeFuel = 1;
+    public float playerOneFuel = 100;
+    public float playerTwoFuel = 100;
+    public float removeFuel = 1;
+    private float fullFuel = 100;
+
 
     public Slider playerOneFuelSlider, playerTwoFuelSlider;
     //public GameObject healthIconP1, healthIconP2;
@@ -38,7 +39,7 @@ public class InGameUI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (playerOneFuel == 0)
         {
@@ -71,13 +72,13 @@ public class InGameUI : MonoBehaviour
 
     public void RemoveFuelPlayerOne()
     {
-        playerOneFuel -= removeFuel;
+        playerOneFuel = playerOneFuel - removeFuel * Time.deltaTime;
         playerOneFuelSlider.value = playerOneFuel;
-    }
+        }
 
     public void RemoveFuelPlayerTwo()
     {
         playerTwoFuel -= removeFuel;
         playerTwoFuelSlider.value = playerTwoFuel;
-    }
+        }
 }
