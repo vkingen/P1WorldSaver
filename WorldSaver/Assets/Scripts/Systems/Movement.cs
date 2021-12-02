@@ -76,5 +76,4 @@ public class Movement : MonoBehaviour
        
         rb.MoveRotation(rb.rotation * angleRot); //Page 194, in C# book
     }
-
 }
