@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class MovementTest : MonoBehaviour
 {
     InGameUI IGUI;
-    private int playerOneFuel;
-    private int playerTwoFuel;
+    private float playerOneFuel;
+    private float playerTwoFuel;
 
     Rigidbody rb;
     public float moveSpeed;
@@ -32,6 +32,8 @@ public class MovementTest : MonoBehaviour
     bool isPlayerOne;
 
 
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -51,19 +53,19 @@ public class MovementTest : MonoBehaviour
         {
             vInput = Input.GetAxis("Vertical") * moveSpeed;
             hInput = Input.GetAxis("Horizontal") * rotateSpeed;
-            if (rb.velocity.magnitude > 0)
+            if (vInput != 0 || hInput != 0)
                     {
-                        InGameUI.instance.RemoveFuelPlayerOne();
+                        IGUI.RemoveFuelPlayerOne();
                     }
         }
         else //Player 2 movement. "Vertical2" and "Horizontal2" are controls decided in unity's Input Manager.
         {
             vInput = Input.GetAxis("Vertical2") * moveSpeed;
             hInput = Input.GetAxis("Horizontal2") * rotateSpeed;
-            if (rb.velocity.magnitude > 0)
+            if (vInput != 0 || hInput != 0)
             {
-                InGameUI.instance.RemoveFuelPlayerTwo();
-            }
+                        IGUI.RemoveFuelPlayerTwo();
+                    }
         }
         
     }
