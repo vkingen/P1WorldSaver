@@ -52,8 +52,6 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
-
         Vector3 rotation = Vector3.up * hInput; //Decides the rotation with a Vector 3 variable.
         
         Quaternion angleRot = Quaternion.Euler(rotation * Time.fixedDeltaTime); //Page 194, in C# book
