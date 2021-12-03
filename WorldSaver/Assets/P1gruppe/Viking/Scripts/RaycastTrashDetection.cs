@@ -7,6 +7,9 @@ public class RaycastTrashDetection : MonoBehaviour
     public GameObject playerTwo;
     public float maxRange;
 
+    public int trashCounter;
+    public int trashLimit = 10;
+
     Movement movementScript;
 
     public float distance;
@@ -49,34 +52,19 @@ public class RaycastTrashDetection : MonoBehaviour
         if (distance > distanceToTear)
         {
             //Application.LoadLevel(Application.loadedLevel); //temporary
-            Debug.Log("ROPE TEAR");
+            //Debug.Log("ROPE TEAR");
         }
     }
 
-    private void Update()
+    void ChangeColor()
     {
-        RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, (playerTwo.transform.position - transform.position), out hit, maxRange))
-        {
-            if (hit.transform.tag == "Plastic")
-            {
-                Debug.Log(hit.transform.name + " is picked up");
-                Destroy(hit.transform.gameObject);
-
-                IGUI.plasticPickUp();
-            }
-        }
-
-        Tear();
-
         if (distance > 0 && distance < 25)
         {
             lR.startColor = Color.green;
             lR.endColor = Color.green;
 
         }
-        else if(distance > 25 && distance < 50)
+        else if (distance > 25 && distance < 50)
         {
             lR.startColor = Color.yellow;
             lR.endColor = Color.yellow;
@@ -84,9 +72,40 @@ public class RaycastTrashDetection : MonoBehaviour
         }
         else if (distance > 50 && distance < 75)
         {
-           
+
             lR.startColor = Color.red;
             lR.endColor = Color.red;
         }
+    }
+
+    void HitDetection()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, (playerTwo.transform.position - transform.position), out hit, maxRange))
+        {
+            if (trashCounter < trashLimit)
+            {
+                if (hit.transform.tag == "Plastic")
+                {
+                    //Debug.Log(hit.transform.name + " is picked up");
+                    Destroy(hit.transform.gameObject);
+
+                    trashCounter++;
+
+                    IGUI.plasticPickUp();
+                }
+            }
+        }
+    }
+
+    private void Update()
+    {
+
+        HitDetection();
+        Tear();
+        ChangeColor();
+
+
     }
 }
