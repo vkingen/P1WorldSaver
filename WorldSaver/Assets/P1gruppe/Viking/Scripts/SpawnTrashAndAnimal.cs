@@ -8,10 +8,19 @@ public class SpawnTrashAndAnimal : MonoBehaviour
     public Vector3 size;
     Vector3 rotation;
 
+  
+
     public GameObject[] trashPrefab;
     public GameObject[] animals;
     public GameObject animalClone;
-    public int objectsToSpawn = 50;
+
+    public List<GameObject> trashArray;
+    bool missionComplete = false;
+    int objectsToRemove;
+
+
+
+    public int objectsToSpawn = 10;
     private void Start()
     {
         center = transform.position;
@@ -19,11 +28,30 @@ public class SpawnTrashAndAnimal : MonoBehaviour
         animalClone.transform.Rotate(0,0, 180);
     }
 
-    private void Update()
+
+
+    private void FixedUpdate()
     {
         if (objectsToSpawn > 0)
         {
+            objectsToSpawn--;
             SpawnTheTrash();
+        }
+
+        objectsToRemove = 10;
+        foreach (var obj in trashArray)
+        {
+            if(obj==null)
+            {
+                objectsToRemove--;
+            }
+        }
+        if(objectsToRemove == 0)
+        {
+            Debug.Log("swag");
+            animalClone.transform.position += Vector3.down * Time.deltaTime * 2;
+            //animalClone.gameObject.GetComponent<Animator>().SetBool("Dive", true);
+            animalClone.gameObject.GetComponentInChildren<Animator>().SetBool("Dive", true);
         }
     }
 
@@ -34,6 +62,6 @@ public class SpawnTrashAndAnimal : MonoBehaviour
         Vector3 pos = center + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
         rotation = new Vector3(0,Random.Range(0,359));
         GameObject trashClone = Instantiate(trashPrefab[Random.Range(0, trashPrefab.Length)], pos, Quaternion.Euler(rotation));
-        objectsToSpawn--;
+        trashArray.Add(trashClone);
     }
 }
