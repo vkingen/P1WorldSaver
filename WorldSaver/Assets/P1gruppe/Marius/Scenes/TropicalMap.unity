@@ -627,7 +627,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream
   m_RootOrder: 37
+=======
+  m_RootOrder: 34
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &213555510
 PrefabInstance:
@@ -1579,7 +1583,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream
   m_RootOrder: 35
+=======
+  m_RootOrder: 31
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &515684169
 GameObject:
@@ -1677,7 +1685,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream
   m_RootOrder: 34
+=======
+  m_RootOrder: 30
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &517747623
 PrefabInstance:
@@ -2065,7 +2077,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream
   m_RootOrder: 33
+=======
+  m_RootOrder: 29
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &610009616
 GameObject:
@@ -2163,7 +2179,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream
   m_RootOrder: 39
+=======
+  m_RootOrder: 38
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &642387910
 PrefabInstance:
@@ -2669,7 +2689,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream
   m_RootOrder: 36
+=======
+  m_RootOrder: 33
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &768634506
 PrefabInstance:
@@ -2918,7 +2942,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream
   m_RootOrder: 32
+=======
+  m_RootOrder: 28
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &806000572
 PrefabInstance:
@@ -3250,7 +3278,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012689625304, guid: a57738876ee6c674bae21bdf5da2ee9e, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< Updated upstream
       value: 30
+=======
+      value: 29
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 4000012689625304, guid: a57738876ee6c674bae21bdf5da2ee9e, type: 3}
       propertyPath: m_LocalScale.x
@@ -6117,7 +6149,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5336c9e023a19074c9abbb16a84b4c63, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< Updated upstream
       value: 29
+=======
+      value: 28
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5336c9e023a19074c9abbb16a84b4c63, type: 3}
       propertyPath: m_LocalScale.x
@@ -16705,7 +16741,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream
   m_RootOrder: 28
+=======
+  m_RootOrder: 26
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1778157288
 MonoBehaviour:
@@ -17158,7 +17198,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c396bc999804cd4a95900d384dd9caa, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< Updated upstream
       value: 31
+=======
+      value: 30
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c396bc999804cd4a95900d384dd9caa, type: 3}
       propertyPath: m_LocalScale.x
@@ -17544,7 +17588,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream
   m_RootOrder: 38
+=======
+  m_RootOrder: 35
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2097223143
 PrefabInstance:
