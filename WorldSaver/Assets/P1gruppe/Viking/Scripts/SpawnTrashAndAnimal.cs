@@ -17,6 +17,7 @@ public class SpawnTrashAndAnimal : MonoBehaviour
     public List<GameObject> trashArray;
     bool missionComplete = false;
     int objectsToRemove;
+    float animationMoveSpeed = 3;
 
 
 
@@ -25,6 +26,7 @@ public class SpawnTrashAndAnimal : MonoBehaviour
     {
         center = transform.position;
         animalClone = Instantiate(animals[Random.Range(0,animals.Length)], center, Quaternion.identity);
+        animalClone.transform.position += new Vector3(0,5,0);
         animalClone.transform.Rotate(0,0, 180);
     }
 
@@ -49,8 +51,7 @@ public class SpawnTrashAndAnimal : MonoBehaviour
         if(objectsToRemove == 0)
         {
             Debug.Log("swag");
-            animalClone.transform.position += Vector3.down * Time.deltaTime * 2;
-            //animalClone.gameObject.GetComponent<Animator>().SetBool("Dive", true);
+            animalClone.transform.position += Vector3.down * Time.deltaTime * animationMoveSpeed;
             animalClone.gameObject.GetComponentInChildren<Animator>().SetBool("Dive", true);
         }
     }
