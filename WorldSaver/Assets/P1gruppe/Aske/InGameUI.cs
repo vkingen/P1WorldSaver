@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class InGameUI : MonoBehaviour
 {
@@ -15,10 +16,11 @@ public class InGameUI : MonoBehaviour
 
     public float plasticCollected = 0;
     public float addPlastic = 1;
-
+    public float fullPlastic = 10;
 
     public Slider playerOneFuelSlider, playerTwoFuelSlider;
     public Slider plasticMeter;
+    public TMP_Text plasticCounter;
     //public GameObject healthIconP1, healthIconP2;
 
     //private void Awake()
@@ -41,6 +43,8 @@ public class InGameUI : MonoBehaviour
         plasticMeter.value = plasticCollected;
         playerOneFuelSlider.value = playerOneFuel;
         playerTwoFuelSlider.value = playerTwoFuel;
+
+        plasticCounter.text = plasticCollected.ToString() + " / " + fullPlastic.ToString();
     }
 
     // Update is called once per frame
@@ -92,6 +96,6 @@ public class InGameUI : MonoBehaviour
     public void plasticPickUp()
     {
         plasticCollected = plasticCollected + addPlastic;
-        plasticMeter.value = plasticCollected;
+        plasticCounter.text = plasticCollected.ToString() + " / " + fullPlastic.ToString();
     }
 }
