@@ -11,6 +11,7 @@ public class RaycastTrashDetection : MonoBehaviour
 
     public float distance;
     public float distanceToTear;
+    public float width = 1f;
 
     LineRenderer lR;
 
@@ -26,8 +27,8 @@ public class RaycastTrashDetection : MonoBehaviour
         lR = GetComponent<LineRenderer>();
         lR.startColor = Color.black;
         lR.endColor = Color.black;
-        lR.startWidth = 0.1f;
-        lR.endWidth = 0.1f;
+        lR.startWidth = width;
+        lR.endWidth = width;
         lR.positionCount = 2;
         lR.useWorldSpace = true;
         lR.material = new Material(Shader.Find("Sprites/Default"));
@@ -62,6 +63,7 @@ public class RaycastTrashDetection : MonoBehaviour
             {
                 Debug.Log(hit.transform.name + " is picked up");
                 Destroy(hit.transform.gameObject);
+
                 IGUI.plasticPickUp();
             }
         }
