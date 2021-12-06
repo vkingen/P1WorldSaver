@@ -26,7 +26,8 @@ public class MakeSomeNoise : MonoBehaviour
     {
         MakeNoise();
         xOffset += Time.deltaTime * timeScale;
-        yOffset += Time.deltaTime * timeScale;
+        if (yOffset <= 0.3) yOffset += Time.deltaTime * timeScale;
+        if (yOffset >= power) yOffset -= Time.deltaTime * timeScale;
     }
 
     void MakeNoise()
