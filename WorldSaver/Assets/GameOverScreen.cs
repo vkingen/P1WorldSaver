@@ -21,10 +21,11 @@ public class GameOverScreen : MonoBehaviour
 
     private void Update()
     {
-        if (raycastTrashDetection.isTeared == true)
-        {
-            GameOver();
-        }
+        
+        //if (raycastTrashDetection.isTeared == true)
+        //{
+        //    GameOver();
+        //}
 
     }
 
