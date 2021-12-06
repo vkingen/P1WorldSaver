@@ -6,6 +6,10 @@ public class RaycastTrashDetection : MonoBehaviour
 {
     public static RaycastTrashDetection instance;
 
+    public AudioSource ropeSound;
+    bool ropeIsTearing = false;
+    public float ropeTearMaxVolume = 1;
+
     public GameObject playerTwo;
     public float maxRange;
 
@@ -67,22 +71,40 @@ public class RaycastTrashDetection : MonoBehaviour
     {
         if (distance > 0 && distance < 50)
         {
+            ropeIsTearing = false;
             lR.startColor = Color.green;
             lR.endColor = Color.green;
 
         }
         else if (distance > 50 && distance < 65)
         {
+            ropeIsTearing = false;
             lR.startColor = Color.yellow;
             lR.endColor = Color.yellow;
 
         }
         else if (distance > 65 && distance < 75)
         {
-
+            ropeIsTearing = true;
             lR.startColor = Color.red;
             lR.endColor = Color.red;
         }
+    }
+
+    public void RopeTear()
+    {
+        if (ropeIsTearing)
+        {
+            ropeSound.volume = ropeTearMaxVolume;
+        }
+        else
+        {
+            ropeSound.volume = 0;
+        }
+
+        if(isTeared)
+            ropeSound.volume = 0;
+
     }
 
     void HitDetection()
@@ -119,9 +141,11 @@ public class RaycastTrashDetection : MonoBehaviour
             HitDetection();
             Tear();
             ChangeColor();
+            RopeTear();
         }
         else
         {
+            RopeTear();
             lR.enabled = false;
         }
 
