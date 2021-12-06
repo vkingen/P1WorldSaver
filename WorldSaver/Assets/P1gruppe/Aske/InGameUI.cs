@@ -20,7 +20,8 @@ public class InGameUI : MonoBehaviour
 
     public Slider playerOneFuelSlider, playerTwoFuelSlider;
     public Slider plasticMeter;
-    public TMP_Text plasticCounter;
+    //public TMP_Text plasticCounter;
+
     //public GameObject healthIconP1, healthIconP2;
 
     //private void Awake()
@@ -44,7 +45,7 @@ public class InGameUI : MonoBehaviour
         playerOneFuelSlider.value = playerOneFuel;
         playerTwoFuelSlider.value = playerTwoFuel;
 
-        plasticCounter.text = plasticCollected.ToString() + " / " + fullPlastic.ToString();
+        //plasticCounter.text = plasticCollected.ToString() + " / " + fullPlastic.ToString();
     }
 
     // Update is called once per frame
@@ -96,6 +97,6 @@ public class InGameUI : MonoBehaviour
     public void plasticPickUp()
     {
         plasticCollected = plasticCollected + addPlastic;
-        plasticCounter.text = plasticCollected.ToString() + " / " + fullPlastic.ToString();
+        //plasticCounter.text = plasticCollected.ToString() + " / " + fullPlastic.ToString();
     }
 }
