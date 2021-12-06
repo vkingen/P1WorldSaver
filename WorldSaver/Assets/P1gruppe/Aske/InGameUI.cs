@@ -8,19 +8,22 @@ using TMPro;
 public class InGameUI : MonoBehaviour
 {
     public static InGameUI instance;
+    RaycastTrashDetection RcTD;
 
     public float playerOneFuel = 100;
     public float playerTwoFuel = 100;
     public float removeFuel = 1;
     private float fullFuel = 100;
 
-    public float plasticCollected = 0;
-    public float addPlastic = 1;
-    public float fullPlastic = 10;
+    //public float plasticCollected = 0;
+    public int trashCounter;
+    //public float addPlastic = 1;
+    //public float fullPlastic = 10;
+    public int trashLimit;
 
     public Slider playerOneFuelSlider, playerTwoFuelSlider;
-    public Slider plasticMeter;
-    //public TMP_Text plasticCounter;
+    //public Slider plasticMeter;
+    public TMP_Text plasticCounter;
 
     //public GameObject healthIconP1, healthIconP2;
 
@@ -41,11 +44,16 @@ public class InGameUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        plasticMeter.value = plasticCollected;
+        RcTD = FindObjectOfType<RaycastTrashDetection>();
+        trashCounter = RcTD.trashCounter;
+        trashLimit = RcTD.trashLimit;
+
+        //plasticMeter.value = plasticCollected;
         playerOneFuelSlider.value = playerOneFuel;
         playerTwoFuelSlider.value = playerTwoFuel;
 
         //plasticCounter.text = plasticCollected.ToString() + " / " + fullPlastic.ToString();
+        plasticCounter.text = trashCounter.ToString() + " / " + trashLimit.ToString();
     }
 
     // Update is called once per frame
@@ -80,13 +88,13 @@ public class InGameUI : MonoBehaviour
         playerTwoFuelSlider.gameObject.SetActive(true);
         //healthIconP1.SetActive(true);
         //healthIconP2.SetActive(true);
-    } */  
+    } */
 
     public void RemoveFuelPlayerOne()
     {
         playerOneFuel = playerOneFuel - removeFuel * Time.deltaTime;
         playerOneFuelSlider.value = playerOneFuel;
-        }
+    }
 
     public void RemoveFuelPlayerTwo()
     {
@@ -94,9 +102,16 @@ public class InGameUI : MonoBehaviour
         playerTwoFuelSlider.value = playerTwoFuel;
     }
 
+    //public void plasticPickUp()
+    //{
+    //    plasticCollected = plasticCollected + addPlastic;
+    //    plasticCounter.text = plasticCollected.ToString() + " / " + fullPlastic.ToString();
+    //}
+
     public void plasticPickUp()
     {
-        plasticCollected = plasticCollected + addPlastic;
-        //plasticCounter.text = plasticCollected.ToString() + " / " + fullPlastic.ToString();
+        trashCounter = RcTD.trashCounter;
+        trashLimit = RcTD.trashLimit;
+        plasticCounter.text = trashCounter.ToString() + " / " + trashLimit.ToString();
     }
 }

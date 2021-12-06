@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RaycastTrashDetection : MonoBehaviour
 {
+    public static RaycastTrashDetection instance;
+
     public GameObject playerTwo;
     public float maxRange;
 
@@ -21,6 +23,8 @@ public class RaycastTrashDetection : MonoBehaviour
     public Transform p1, p2;
 
     InGameUI IGUI;
+
+    public bool isTeared = false;
     
 
     private void Start()
@@ -37,7 +41,7 @@ public class RaycastTrashDetection : MonoBehaviour
         lR.material = new Material(Shader.Find("Sprites/Default"));
 
         IGUI = FindObjectOfType<InGameUI>();
-        IGUI.plasticPickUp();
+        //IGUI.plasticPickUp();
     }
 
     private void FixedUpdate()
@@ -49,10 +53,11 @@ public class RaycastTrashDetection : MonoBehaviour
     void Tear() //Measures the distance between the players and enables tearing when 'distance' becomes greater than 'distanceToTear'.
     {
         distance = Vector3.Distance(p1.position, p2.position); //Measures the distance between the players.
-        if (distance > distanceToTear)
+        if (distance > distanceToTear && isTeared == false)
         {
+            isTeared = true;
             //Application.LoadLevel(Application.loadedLevel); //temporary
-            //Debug.Log("ROPE TEAR");
+            Debug.Log("ROPE TEAR");
         }
     }
 
