@@ -63,19 +63,19 @@ public class RaycastTrashDetection : MonoBehaviour
 
     void ChangeColor()
     {
-        if (distance > 0 && distance < 25)
+        if (distance > 0 && distance < 50)
         {
             lR.startColor = Color.green;
             lR.endColor = Color.green;
 
         }
-        else if (distance > 25 && distance < 50)
+        else if (distance > 50 && distance < 65)
         {
             lR.startColor = Color.yellow;
             lR.endColor = Color.yellow;
 
         }
-        else if (distance > 50 && distance < 75)
+        else if (distance > 65 && distance < 75)
         {
 
             lR.startColor = Color.red;

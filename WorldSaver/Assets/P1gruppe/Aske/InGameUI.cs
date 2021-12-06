@@ -26,6 +26,8 @@ public class InGameUI : MonoBehaviour
     //public Slider plasticMeter;
     public TMP_Text plasticCounter;
 
+    public TMP_Text outOfFueltext;
+
     //public GameObject healthIconP1, healthIconP2;
 
     //private void Awake()
@@ -119,6 +121,7 @@ public class InGameUI : MonoBehaviour
         playerTwoFuelSlider.gameObject.SetActive(false);
         //healthIconP1.SetActive(false);
         //healthIconP2.SetActive(false);
+        outOfFueltext.text = "You ran out of fuel"; // This should be a variable.
         GOS.GameOver();
     }
 
@@ -132,6 +135,7 @@ public class InGameUI : MonoBehaviour
         plasticCounter.gameObject.SetActive(false);
         //healthIconP1.SetActive(false);
         //healthIconP2.SetActive(false);
+        outOfFueltext.text = "You ran out of fuel"; // This should be a variable.
         GOS.GameOver();
     }
 
