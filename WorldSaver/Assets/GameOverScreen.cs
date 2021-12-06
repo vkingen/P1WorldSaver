@@ -14,6 +14,7 @@ public class GameOverScreen : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1f;
         raycastTrashDetection = FindObjectOfType<RaycastTrashDetection>();
         gameOverScreen.SetActive(false);
     }
