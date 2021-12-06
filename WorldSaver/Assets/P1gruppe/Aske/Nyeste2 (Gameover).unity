@@ -7910,9 +7910,9 @@ Transform:
   - {fileID: 20459315}
   - {fileID: 1386907347}
   - {fileID: 2015970149}
+  - {fileID: 2071370972}
   - {fileID: 1114998383}
   - {fileID: 178544471}
-  - {fileID: 2071370972}
   - {fileID: 2061418950}
   - {fileID: 1359930059}
   - {fileID: 1949287413}
@@ -23223,7 +23223,7 @@ Transform:
   m_LocalScale: {x: 161.16771, y: 74.75481, z: 74.75481}
   m_Children: []
   m_Father: {fileID: 735985976}
-  m_RootOrder: 48
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2074805694
 GameObject:
@@ -23917,6 +23917,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 20277845575732007}
+  - component: {fileID: 20277845575964424}
   m_Layer: 0
   m_Name: ship-cargo
   m_TagString: Untagged
@@ -23924,6 +23925,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &20277845575964424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20277845575964423}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f50195a8cc4ffc4193834518dfa49c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &20277845577059079
 MeshFilter:
   m_ObjectHideFlags: 0

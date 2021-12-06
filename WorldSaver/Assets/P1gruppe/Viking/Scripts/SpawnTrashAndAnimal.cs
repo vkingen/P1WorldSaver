@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnTrashAndAnimal : MonoBehaviour
 {
+    InGameUI IGUI;
     public Vector3 center; 
     public Vector3 size;
     Vector3 rotation;
@@ -26,6 +27,8 @@ public class SpawnTrashAndAnimal : MonoBehaviour
         animalClone = Instantiate(animals[Random.Range(0,animals.Length)], center, Quaternion.identity); // Spawning a random animal at the center position
         animalClone.transform.position += new Vector3(0,5,0); // Offsetting the position of the animal 
         //animalClone.transform.Rotate(0,0, 180);
+
+        IGUI = FindObjectOfType<InGameUI>();
     }
 
 
@@ -51,6 +54,8 @@ public class SpawnTrashAndAnimal : MonoBehaviour
             Debug.Log("swag");
             animalClone.transform.position += Vector3.down * Time.deltaTime * animationMoveSpeed;
             animalClone.gameObject.GetComponentInChildren<Animator>().SetBool("Dive", true);
+
+            IGUI.Refuel();
         }
     }
 
