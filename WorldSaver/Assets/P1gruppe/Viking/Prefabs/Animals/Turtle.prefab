@@ -605,7 +605,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4188331867383602}
   - component: {fileID: 95674574316146116}
-  - component: {fileID: 4583259013687878829}
   m_Layer: 0
   m_Name: Turtle
   m_TagString: Untagged
@@ -620,15 +619,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580388819070796}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children:
   - {fileID: 4274104745164900}
   - {fileID: 4326717115950818}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &95674574316146116
 Animator:
   serializedVersion: 3
@@ -648,19 +647,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &4583259013687878829
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1580388819070796}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.404253, y: 1, z: 1.742248}
-  m_Center: {x: -0, y: -0, z: 0}
 --- !u!1 &1606509526633532
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:WorldSaver/Assets/P1gruppe/Conrad/Soundscene.unity.meta
 guid: abc21ad6bb5f8c2449f9b0aa843bea5f
 DefaultImporter:
+=======
+guid: 0571a49cc845d1141b455b740481cea5
+PrefabImporter:
+>>>>>>> 0a5ba9222d5a72d7dea7c09498114074c8804174:WorldSaver/Assets/P1gruppe/Viking/Prefabs/Animals/TurtleToSave.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
