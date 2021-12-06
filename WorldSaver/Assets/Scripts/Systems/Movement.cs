@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class Movement : MonoBehaviour
 {
     InGameUI IGUI;
-    private float playerOneFuel;
-    private float playerTwoFuel;
+    //private float playerOneFuel;
+    //private float playerTwoFuel;
 
     Rigidbody rb;
     AudioSource aS;
@@ -41,8 +41,8 @@ public class Movement : MonoBehaviour
         IGUI = FindObjectOfType<InGameUI>();
         //IGUI.ShowUI();
 
-        playerOneFuel = GameObject.Find("InGameUI").GetComponent<InGameUI>().playerOneFuel;
-        playerTwoFuel = GameObject.Find("InGameUI").GetComponent<InGameUI>().playerTwoFuel;
+        //playerOneFuel = GameObject.Find("InGameUI").GetComponent<InGameUI>().playerOneFuel;
+        //playerTwoFuel = GameObject.Find("InGameUI").GetComponent<InGameUI>().playerTwoFuel;
 
     }
 

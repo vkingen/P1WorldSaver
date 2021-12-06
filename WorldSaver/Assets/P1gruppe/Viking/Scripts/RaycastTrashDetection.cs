@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RaycastTrashDetection : MonoBehaviour
 {
+    public static RaycastTrashDetection instance;
+
     public GameObject playerTwo;
     public float maxRange;
 
@@ -39,7 +41,7 @@ public class RaycastTrashDetection : MonoBehaviour
         lR.material = new Material(Shader.Find("Sprites/Default"));
 
         IGUI = FindObjectOfType<InGameUI>();
-        IGUI.plasticPickUp();
+        //IGUI.plasticPickUp();
     }
 
     private void FixedUpdate()
