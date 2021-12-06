@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/P1gruppe/Malte/Gameover.unity
+    guid: db6aa15e02c7acc4186685a2930affc7
+  - enabled: 1
     path: Assets/P1gruppe/Viking/Scenes/MainMenu.unity
     guid: 0f7e110a3c3a71147a3767c77a1b8484
   - enabled: 1
