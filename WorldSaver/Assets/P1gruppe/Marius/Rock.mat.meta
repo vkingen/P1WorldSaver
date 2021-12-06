@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:WorldSaver/Assets/P1gruppe/August/Animals/SharkToSpawn.prefab.meta
+guid: 91dcb8f57233b7f4ca144d4b38a03114
+PrefabImporter:
+=======
 guid: 0b15fdba5764c264e89130cc8926687e
 NativeFormatImporter:
+>>>>>>> d83a52ffe75648b32266c71dae150926f0bd5619:WorldSaver/Assets/P1gruppe/Marius/Rock.mat.meta
   externalObjects: {}
   mainObjectFileID: 2100000
   userData: 
