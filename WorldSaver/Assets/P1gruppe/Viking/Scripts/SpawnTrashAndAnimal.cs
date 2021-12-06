@@ -25,7 +25,7 @@ public class SpawnTrashAndAnimal : MonoBehaviour
         center = transform.position; // Setting the center variable to this components transforms position (x,y,z)
         animalClone = Instantiate(animals[Random.Range(0,animals.Length)], center, Quaternion.identity); // Spawning a random animal at the center position
         animalClone.transform.position += new Vector3(0,5,0); // Offsetting the position of the animal 
-        animalClone.transform.Rotate(0,0, 180);
+        //animalClone.transform.Rotate(0,0, 180);
     }
 
 

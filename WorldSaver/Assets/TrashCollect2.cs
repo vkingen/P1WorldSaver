@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TrashCollect2 : MonoBehaviour
 {
+    InGameUI IGUI;
+
     RaycastTrashDetection rTD;
     public int shipTrashCounter;
 
@@ -11,6 +13,8 @@ public class TrashCollect2 : MonoBehaviour
 
     private void Start()
     {
+        IGUI = FindObjectOfType<InGameUI>();
+
         rTD = FindObjectOfType<RaycastTrashDetection>();
     }
 
@@ -21,6 +25,7 @@ public class TrashCollect2 : MonoBehaviour
         {
             shipTrashCounter += rTD.trashCounter;
             rTD.trashCounter = 0;
+            IGUI.plasticPickUp();
 
             int range = shipTrashCounter / 10;
             switch (range)
