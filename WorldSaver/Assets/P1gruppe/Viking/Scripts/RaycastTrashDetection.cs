@@ -44,11 +44,13 @@ public class RaycastTrashDetection : MonoBehaviour
         //IGUI.plasticPickUp();
     }
 
-    private void FixedUpdate()
+    public void SetLineRendererPos()
     {
         lR.SetPosition(0, transform.position);
         lR.SetPosition(1, playerTwo.transform.position);
     }
+
+   
 
     void Tear() //Measures the distance between the players and enables tearing when 'distance' becomes greater than 'distanceToTear'.
     {
@@ -85,6 +87,7 @@ public class RaycastTrashDetection : MonoBehaviour
 
     void HitDetection()
     {
+
         RaycastHit hit;
 
         if (Physics.Raycast(transform.position, (playerTwo.transform.position - transform.position), out hit, maxRange))
@@ -101,15 +104,26 @@ public class RaycastTrashDetection : MonoBehaviour
                     IGUI.plasticPickUp();
                 }
             }
+            if(hit.transform.tag == "Obstacle")
+            {
+                // Reset position for players
+            }
         }
     }
 
     private void Update()
     {
-
-        HitDetection();
-        Tear();
-        ChangeColor();
+        if(!isTeared)
+        {
+            SetLineRendererPos();
+            HitDetection();
+            Tear();
+            ChangeColor();
+        }
+        else
+        {
+            lR.enabled = false;
+        }
 
 
     }
