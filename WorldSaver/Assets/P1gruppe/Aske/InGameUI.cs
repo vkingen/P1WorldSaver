@@ -15,6 +15,8 @@ public class InGameUI : MonoBehaviour
     public float playerTwoFuel = 100;
     public float removeFuel = 1;
     private float fullFuel = 100;
+    public float refillFuel = 25;
+    
 
     //public float plasticCollected = 0;
     public int trashCounter;
@@ -137,6 +139,12 @@ public class InGameUI : MonoBehaviour
         //healthIconP2.SetActive(false);
         outOfFueltext.text = "You ran out of fuel"; // This should be a variable.
         GOS.GameOver();
+    }
+
+    public void Refuel()
+    {
+        playerOneFuel = playerOneFuel + refillFuel;
+        playerTwoFuel = playerTwoFuel + refillFuel;
     }
 
     //public void plasticPickUp()
