@@ -1,18 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOverScreen : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public GameObject gameOverScreen;
+
+
+
+    RaycastTrashDetection raycastTrashDetection;
+
+    private void Start()
     {
-        
+        raycastTrashDetection = FindObjectOfType<RaycastTrashDetection>();
+        gameOverScreen.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (raycastTrashDetection.isTeared == true)
+        {
+            GameOver();
+        }
+
     }
+
+    public void GameOver()
+    {
+        gameOverScreen.SetActive(true);
+        Time.timeScale = 0f;
+
+    }
+
+    public void PlayAgain()
+    {
+        //SceneManager.LoadScene(SceneManager.GetActiveScene());
+
+        Application.LoadLevel(Application.loadedLevel);
+
+
+    }
+
+        
 }
+
+
+
