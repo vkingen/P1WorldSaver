@@ -52,7 +52,7 @@ public class RaycastTrashDetection : MonoBehaviour
         if (distance > distanceToTear)
         {
             //Application.LoadLevel(Application.loadedLevel); //temporary
-            //Debug.Log("ROPE TEAR");
+            Debug.Log("ROPE TEAR");
         }
     }
 
