@@ -9,6 +9,7 @@ public class InGameUI : MonoBehaviour
 {
     public static InGameUI instance;
     RaycastTrashDetection RcTD;
+    GameOverScreen GOS;
 
     public float playerOneFuel = 100;
     public float playerTwoFuel = 100;
@@ -48,6 +49,8 @@ public class InGameUI : MonoBehaviour
         trashCounter = RcTD.trashCounter;
         trashLimit = RcTD.trashLimit;
 
+        GOS = FindObjectOfType<GameOverScreen>();
+
         //plasticMeter.value = plasticCollected;
         playerOneFuelSlider.value = playerOneFuel;
         playerTwoFuelSlider.value = playerTwoFuel;
@@ -59,28 +62,28 @@ public class InGameUI : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (playerOneFuel <= 0)
-        {
-            Debug.Log("P1 fuel empty");
-            playerOneFuel = fullFuel;
-            playerTwoFuel = fullFuel;
-            playerOneFuelSlider.gameObject.SetActive(false);
-            playerTwoFuelSlider.gameObject.SetActive(false);
-            //healthIconP1.SetActive(false);
-            //healthIconP2.SetActive(false);
-            SceneManager.LoadScene("P2Wins");
-        }
-        else if (playerTwoFuel <= 0)
-        {
-            Debug.Log("P2 fuel empty");
-            playerOneFuel = fullFuel;
-            playerTwoFuel = fullFuel;
-            playerOneFuelSlider.gameObject.SetActive(false);
-            playerTwoFuelSlider.gameObject.SetActive(false);
-            //healthIconP1.SetActive(false);
-            //healthIconP2.SetActive(false);
-            SceneManager.LoadScene("P1Wins");
-        }
+        //if (playerOneFuel <= 0)
+        //{
+        //    Debug.Log("P1 fuel empty");
+        //    playerOneFuel = fullFuel;
+        //    playerTwoFuel = fullFuel;
+        //    playerOneFuelSlider.gameObject.SetActive(false);
+        //    playerTwoFuelSlider.gameObject.SetActive(false);
+        //    //healthIconP1.SetActive(false);
+        //    //healthIconP2.SetActive(false);
+        //    SceneManager.LoadScene("P2Wins");
+        //}
+        //else if (playerTwoFuel <= 0)
+        //{
+        //    Debug.Log("P2 fuel empty");
+        //    playerOneFuel = fullFuel;
+        //    playerTwoFuel = fullFuel;
+        //    playerOneFuelSlider.gameObject.SetActive(false);
+        //    playerTwoFuelSlider.gameObject.SetActive(false);
+        //    //healthIconP1.SetActive(false);
+        //    //healthIconP2.SetActive(false);
+        //    SceneManager.LoadScene("P1Wins");
+        //}
     }
     /*  public void ShowUI()
     {
@@ -94,12 +97,42 @@ public class InGameUI : MonoBehaviour
     {
         playerOneFuel = playerOneFuel - removeFuel * Time.deltaTime;
         playerOneFuelSlider.value = playerOneFuel;
+        if (playerOneFuel <= 0)
+            EmptyFuelPlayerOne();
     }
 
     public void RemoveFuelPlayerTwo()
     {
         playerTwoFuel = playerTwoFuel - removeFuel * Time.deltaTime;
         playerTwoFuelSlider.value = playerTwoFuel;
+        if (playerTwoFuel <= 0)
+            EmptyFuelPlayerTwo();
+    }
+
+    public void EmptyFuelPlayerOne()
+    {
+        
+        Debug.Log("P1 fuel empty");
+        playerOneFuel = fullFuel;
+        playerTwoFuel = fullFuel;
+        playerOneFuelSlider.gameObject.SetActive(false);
+        playerTwoFuelSlider.gameObject.SetActive(false);
+        //healthIconP1.SetActive(false);
+        //healthIconP2.SetActive(false);
+        GOS.GameOver();
+    }
+
+    public void EmptyFuelPlayerTwo()
+    {
+        Debug.Log("P2 fuel empty");
+        playerOneFuel = fullFuel;
+        playerTwoFuel = fullFuel;
+        playerOneFuelSlider.gameObject.SetActive(false);
+        playerTwoFuelSlider.gameObject.SetActive(false);
+        plasticCounter.gameObject.SetActive(false);
+        //healthIconP1.SetActive(false);
+        //healthIconP2.SetActive(false);
+        GOS.GameOver();
     }
 
     //public void plasticPickUp()

@@ -10,9 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1552501723879193044}
   - component: {fileID: 8860122655005369411}
-  - component: {fileID: 2821742480532753212}
   - component: {fileID: 2790101756579207211}
-  - component: {fileID: 4174602117577672616}
   m_Layer: 0
   m_Name: Trash_GarbageBag
   m_TagString: Plastic
@@ -43,28 +41,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557441005439373498}
   m_Material: {fileID: 13400000, guid: 08dbe90a6c0e5e448a591d76b47cf7ff, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.9402721, y: 1.160328, z: 1.1388655}
   m_Center: {x: -0.012640595, y: 0.5742356, z: 0.017501831}
---- !u!114 &2821742480532753212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1557441005439373498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thickness: 0
-  material: {fileID: 0}
-  filter: -65535
-  m_SourceCollider: {fileID: 8860122655005369411}
-  m_DistanceField: {fileID: 0}
 --- !u!54 &2790101756579207211
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -81,19 +62,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &4174602117577672616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1557441005439373498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62359d80fdc0e4315ab6331b78ec5b90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  kinematicForParticles: 0
 --- !u!1 &7732085925092816303
 GameObject:
   m_ObjectHideFlags: 0

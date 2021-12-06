@@ -38,7 +38,7 @@ public class RaycastTrashDetection : MonoBehaviour
         lR.endWidth = width;
         lR.positionCount = 2;
         lR.useWorldSpace = true;
-        lR.material = new Material(Shader.Find("Sprites/Default"));
+        //lR.material = new Material(Shader.Find("Sprites/Default"));
 
         IGUI = FindObjectOfType<InGameUI>();
         //IGUI.plasticPickUp();
