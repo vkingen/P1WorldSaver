@@ -98,7 +98,7 @@ public class InGameUI : MonoBehaviour
         playerOneFuel = playerOneFuel - removeFuel * Time.deltaTime;
         playerOneFuelSlider.value = playerOneFuel;
         if (playerOneFuel <= 0)
-            UpdateFuelPlayerOne();
+            EmptyFuelPlayerOne();
     }
 
     public void RemoveFuelPlayerTwo()
@@ -106,10 +106,10 @@ public class InGameUI : MonoBehaviour
         playerTwoFuel = playerTwoFuel - removeFuel * Time.deltaTime;
         playerTwoFuelSlider.value = playerTwoFuel;
         if (playerTwoFuel <= 0)
-            UpdateFuelPlayerTwo();
+            EmptyFuelPlayerTwo();
     }
 
-    public void UpdateFuelPlayerOne()
+    public void EmptyFuelPlayerOne()
     {
         
         Debug.Log("P1 fuel empty");
@@ -119,19 +119,20 @@ public class InGameUI : MonoBehaviour
         playerTwoFuelSlider.gameObject.SetActive(false);
         //healthIconP1.SetActive(false);
         //healthIconP2.SetActive(false);
-        //GOS.game
+        GOS.GameOver();
     }
 
-    public void UpdateFuelPlayerTwo()
+    public void EmptyFuelPlayerTwo()
     {
         Debug.Log("P2 fuel empty");
         playerOneFuel = fullFuel;
         playerTwoFuel = fullFuel;
         playerOneFuelSlider.gameObject.SetActive(false);
         playerTwoFuelSlider.gameObject.SetActive(false);
+        plasticCounter.gameObject.SetActive(false);
         //healthIconP1.SetActive(false);
         //healthIconP2.SetActive(false);
-        SceneManager.LoadScene("P1Wins");
+        GOS.GameOver();
     }
 
     //public void plasticPickUp()

@@ -3304,9 +3304,8 @@ MonoBehaviour:
   playerOneFuel: 100
   playerTwoFuel: 100
   removeFuel: 1
-  plasticCollected: 0
-  addPlastic: 1
-  fullPlastic: 10
+  trashCounter: 0
+  trashLimit: 0
   playerOneFuelSlider: {fileID: 536718085}
   playerTwoFuelSlider: {fileID: 1238461801}
   plasticCounter: {fileID: 831376137}
