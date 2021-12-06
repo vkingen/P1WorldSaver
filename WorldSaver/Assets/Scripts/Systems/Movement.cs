@@ -11,11 +11,15 @@ public class Movement : MonoBehaviour
     private float playerTwoFuel;
 
     Rigidbody rb;
+    AudioSource aS;
+    public float idlePitch = 0.5f;
+    public float movingPitch = 0.8f;
     public float moveSpeed;
     public float rotateSpeed;
 
     private float vInput;
     private float hInput;
+    bool isMoving = false;
 
 
     
@@ -31,6 +35,7 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
+        aS = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
 
         IGUI = FindObjectOfType<InGameUI>();
@@ -51,6 +56,11 @@ public class Movement : MonoBehaviour
             if (vInput != 0 || hInput != 0)
             {
                 IGUI.RemoveFuelPlayerOne();
+                isMoving = true;
+            }
+            else
+            {
+                isMoving = false;
             }
         }
         else //Player 2 movement. "Vertical2" and "Horizontal2" are controls decided in unity's Input Manager.
@@ -60,9 +70,17 @@ public class Movement : MonoBehaviour
             if (vInput != 0 || hInput != 0)
             {
                 IGUI.RemoveFuelPlayerTwo();
+                isMoving = true;
             }
+            else
+                isMoving = false;
         }
-        
+
+        if(isMoving)
+            aS.pitch = movingPitch;
+        else
+            aS.pitch = idlePitch;
+
     }
 
    
