@@ -655,6 +655,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8948c6380c287794ca00b9b68cd1ee5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idlePitch: 0.5
+  movingPitch: 0.8
   moveSpeed: 7
   rotateSpeed: 100
   isPlayerOne: 1
@@ -670,12 +672,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c323eb81669d804685b777163e162cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ropeSound: {fileID: 0}
+  ropeTearMaxVolume: 1
   playerTwo: {fileID: 1201661765}
   maxRange: 10
+  trashCounter: 0
+  trashLimit: 10
   distance: 0
   distanceToTear: 10
+  width: 1
   p1: {fileID: 224371131}
   p2: {fileID: 1201661769}
+  isTeared: 0
 --- !u!120 &224371139
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -2308,6 +2316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8948c6380c287794ca00b9b68cd1ee5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idlePitch: 0.5
+  movingPitch: 0.8
   moveSpeed: 7
   rotateSpeed: 100
   isPlayerOne: 0
