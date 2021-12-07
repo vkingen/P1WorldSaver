@@ -169,7 +169,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 19aaf570709c969418f2094294f97960, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -296,7 +296,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9f2af06ce2e6a634882275715c5032a9, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -712,10 +712,12 @@ MonoBehaviour:
   ropeSound: {fileID: 661142940}
   ropeTearMaxVolume: 1
   trashSound: {fileID: 1174224013}
+  fullCapacity: {fileID: 1822525279}
   playerTwo: {fileID: 0}
   maxRange: 100
   trashCounter: 0
   trashLimit: 10
+  isResetted: 1
   distance: 0
   distanceToTear: 75
   width: 1
