@@ -58,11 +58,13 @@ public class SpawnTrashAndAnimal : MonoBehaviour
         }
         if(objectsToRemove == 0)
         {
-            Debug.Log("swag");
-            animalClone.transform.position += Vector3.down * Time.deltaTime * animationMoveSpeed;
-            animalClone.gameObject.GetComponentInChildren<Animator>().SetBool("Dive", true);
+            if (!isOverallTrashSpawner)
+            {
+                animalClone.transform.position += Vector3.down * Time.deltaTime * animationMoveSpeed;
+                animalClone.gameObject.GetComponentInChildren<Animator>().SetBool("Dive", true);
 
-            IGUI.Refuel();
+                IGUI.Refuel();
+            }
         }
     }
 

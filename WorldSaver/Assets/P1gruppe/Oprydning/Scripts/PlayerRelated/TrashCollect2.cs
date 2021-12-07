@@ -28,6 +28,7 @@ public class TrashCollect2 : MonoBehaviour
             IGUI.plasticCounterUpdate();
             Debug.Log("resetRope");
             rTD.isTeared = false;
+            rTD.isResetted = true;
 
             int range = shipTrashCounter / 10;
             switch (range)
