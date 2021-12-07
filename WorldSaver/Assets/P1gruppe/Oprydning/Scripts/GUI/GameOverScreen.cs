@@ -38,9 +38,9 @@ public class GameOverScreen : MonoBehaviour
 
     public void PlayAgain()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene());
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
-        Application.LoadLevel(Application.loadedLevel);
+        //Application.LoadLevel(Application.loadedLevel);
 
 
     }
