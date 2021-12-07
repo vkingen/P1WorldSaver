@@ -151,7 +151,7 @@ public class InGameUI : MonoBehaviour
     //    plasticCounter.text = plasticCollected.ToString() + " / " + fullPlastic.ToString();
     //}
 
-    public void plasticPickUp() //rename to plasticcounterupdate
+    public void plasticCounterUpdate()
     {
         trashCounter = RcTD.trashCounter;
         trashLimit = RcTD.trashLimit;
