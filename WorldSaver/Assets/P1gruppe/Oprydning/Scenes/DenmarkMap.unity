@@ -6524,7 +6524,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 735985975}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.722672, y: -0.93523, z: -24.539158}
+  m_LocalPosition: {x: 5.722672, y: 0, z: -24.539158}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 866301861}
@@ -13745,6 +13745,25 @@ Transform:
   m_Father: {fileID: 20277845575732007}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!1 &1529965744 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 6c396bc999804cd4a95900d384dd9caa, type: 3}
+  m_PrefabInstance: {fileID: 42812536}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1529965747
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529965744}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300008, guid: 6c396bc999804cd4a95900d384dd9caa, type: 3}
 --- !u!1001 &1546173740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20590,6 +20609,9 @@ MonoBehaviour:
   thickness: 0
   material: {fileID: 0}
   filter: -65535
+  obiRigidbody: {fileID: 0}
+  wasUnityColliderEnabled: 1
+  dirty: 0
   m_SourceCollider: {fileID: 5759585190598572580}
   m_DistanceField: {fileID: 0}
 --- !u!1 &5759585190598572577
