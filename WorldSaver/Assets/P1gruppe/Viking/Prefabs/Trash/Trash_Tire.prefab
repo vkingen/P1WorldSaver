@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 3401225002403438079}
   - component: {fileID: 4447941847900384254}
   - component: {fileID: 5904198865609851342}
+  - component: {fileID: 6187128636022365127}
   m_Layer: 0
   m_Name: Trash_Tire
   m_TagString: Plastic
@@ -143,6 +144,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.95218843, y: 1.096391, z: 0.9377224}
   m_Center: {x: -0.00025832653, y: 0.42110798, z: 0.014622986}
+--- !u!114 &6187128636022365127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3403345202488047109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6163e3af75f87e45bcf4ba88f03e572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1: Player1
+  player2: Player2
+  avoidTrash: AvoidTrash
 --- !u!1 &6731513237133690257
 GameObject:
   m_ObjectHideFlags: 0

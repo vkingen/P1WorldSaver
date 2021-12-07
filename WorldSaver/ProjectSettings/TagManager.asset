@@ -8,6 +8,7 @@ TagManager:
   - DestroyTile
   - Player1
   - Player2
+  - AvoidTrash
   layers:
   - Default
   - TransparentFX

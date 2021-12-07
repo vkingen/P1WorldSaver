@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class SpawnTrashAndAnimal : MonoBehaviour
+public class SpawnTrashOnMap : MonoBehaviour
 {
     InGameUI IGUI;
     public Vector3 center; 
     public Vector3 size;
     Vector3 rotation;
 
-    public bool isOverallTrashSpawner = false;
 
     public GameObject[] trashPrefab;
     public GameObject[] animals;
@@ -23,15 +23,13 @@ public class SpawnTrashAndAnimal : MonoBehaviour
 
 
     public int objectsToSpawn = 10;
+    public TMP_Text trashCounterText;
     private void Start()
     {
         center = transform.position; // Setting the center variable to this components transforms position (x,y,z)
-        if(!isOverallTrashSpawner)
-        {
-            animalClone = Instantiate(animals[Random.Range(0, animals.Length)], center, Quaternion.identity); // Spawning a random animal at the center position
-            animalClone.transform.position += new Vector3(0, 5, 0); // Offsetting the position of the animal 
-            //animalClone.transform.Rotate(0,0, 180);
-        }
+        animalClone = Instantiate(animals[Random.Range(0, animals.Length)], center, Quaternion.identity); // Spawning a random animal at the center position
+        animalClone.transform.position += new Vector3(0, 5, 0); // Offsetting the position of the animal 
+                                                                //animalClone.transform.Rotate(0,0, 180);
 
 
 
@@ -45,6 +43,7 @@ public class SpawnTrashAndAnimal : MonoBehaviour
         if (objectsToSpawn > 0)
         {
             objectsToSpawn--;
+            
             SpawnTheTrash();
         }
 
@@ -54,17 +53,15 @@ public class SpawnTrashAndAnimal : MonoBehaviour
             if(obj==null)
             {
                 objectsToRemove--;
+                trashCounterText.text = objectsToRemove.ToString();
             }
         }
         if(objectsToRemove == 0)
         {
-            if (!isOverallTrashSpawner)
-            {
-                animalClone.transform.position += Vector3.down * Time.deltaTime * animationMoveSpeed;
-                animalClone.gameObject.GetComponentInChildren<Animator>().SetBool("Dive", true);
+            animalClone.transform.position += Vector3.down * Time.deltaTime * animationMoveSpeed;
+            animalClone.gameObject.GetComponentInChildren<Animator>().SetBool("Dive", true);
 
-                IGUI.Refuel();
-            }
+            IGUI.Refuel();
         }
     }
 
