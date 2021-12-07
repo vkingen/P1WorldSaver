@@ -12,11 +12,15 @@ public class RaycastTrashDetection : MonoBehaviour
     bool ropeIsTearing = false;
     public float ropeTearMaxVolume = 1;
 
+    public AudioSource trashSound;
+    public AudioSource fullCapacity;
+
     public GameObject playerTwo;
     public float maxRange;
 
     public int trashCounter;
     public int trashLimit = 10;
+    public bool isResetted = true;
 
     Movement movementScript;
 
@@ -74,7 +78,6 @@ public class RaycastTrashDetection : MonoBehaviour
         {
             isTeared = true;
             //Application.LoadLevel(Application.loadedLevel); //temporary
-            Debug.Log("ROPE TEAR");
         }
     }
 
@@ -120,26 +123,26 @@ public class RaycastTrashDetection : MonoBehaviour
 
     void HitDetection()
     {
-
         RaycastHit hit;
 
         if (Physics.Raycast(transform.position, (playerTwo.transform.position - transform.position), out hit, maxRange))
         {
-            if (trashCounter < trashLimit)
+            if  (hit.transform.tag == "Plastic")
             {
-                if (hit.transform.tag == "Plastic")
+                if (trashCounter < trashLimit)
                 {
                     //Debug.Log(hit.transform.name + " is picked up");
+                    trashSound.Play();
                     Destroy(hit.transform.gameObject);
 
                     trashCounter++;
-
+                    if (trashCounter == trashLimit && isResetted)
+                    {
+                        fullCapacity.Play();
+                        isResetted = false;
+                    }
                     IGUI.plasticCounterUpdate();
                 }
-            }
-            if(hit.transform.tag == "Obstacle")
-            {
-                // Reset position for players
             }
         }
     }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3310793945720226965}
   - component: {fileID: 4795400145088239874}
   - component: {fileID: 2216258483076195690}
+  - component: {fileID: 6228548037106834638}
   m_Layer: 0
   m_Name: Trash_Cloth
   m_TagString: Plastic
@@ -62,6 +63,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &6228548037106834638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3307033891213962747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6163e3af75f87e45bcf4ba88f03e572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1: Player1
+  player2: Player2
+  avoidTrash: AvoidTrash
 --- !u!1 &7569110936366341280
 GameObject:
   m_ObjectHideFlags: 0

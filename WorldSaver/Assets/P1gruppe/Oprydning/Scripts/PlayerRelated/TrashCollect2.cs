@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TrashCollect2 : MonoBehaviour
 {
+    public static TrashCollect2 instance;
+
     InGameUI IGUI;
 
     RaycastTrashDetection rTD;
@@ -25,9 +27,11 @@ public class TrashCollect2 : MonoBehaviour
         {
             shipTrashCounter += rTD.trashCounter;
             rTD.trashCounter = 0;
-            IGUI.plasticCounterUpdate();
+            IGUI.trashCounterUpdate();
+            IGUI.shipTrashCounterUpdate();
             Debug.Log("resetRope");
             rTD.isTeared = false;
+            rTD.isResetted = true;
 
             int range = shipTrashCounter / 10;
             switch (range)

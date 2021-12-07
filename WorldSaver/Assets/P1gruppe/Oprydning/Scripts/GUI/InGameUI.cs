@@ -10,6 +10,7 @@ public class InGameUI : MonoBehaviour
     public static InGameUI instance;
     RaycastTrashDetection RcTD;
     GameOverScreen GOS;
+    TrashCollect2 TC2;
 
     public float playerOneFuel = 100;
     public float playerTwoFuel = 100;
@@ -22,10 +23,14 @@ public class InGameUI : MonoBehaviour
     //public float addPlastic = 1;
     //public float fullPlastic = 10;
     public int trashLimit;
+    public int shipTrashCounter;
+    public int shipTrashLimit;
 
     public Slider playerOneFuelSlider, playerTwoFuelSlider;
+    public Image playerOneFuelIcon, playerTwoFuelIcon;
     //public Slider plasticMeter;
-    public TMP_Text plasticCounter;
+    public TMP_Text trashCounterText;
+    public TMP_Text shipTrashCounterText;
     public TMP_Text outOfFueltext;
 
     //public GameObject healthIconP1, healthIconP2;
@@ -51,14 +56,19 @@ public class InGameUI : MonoBehaviour
         trashCounter = RcTD.trashCounter;
         trashLimit = RcTD.trashLimit;
 
+        //plasticCounter.text = plasticCollected.ToString() + " / " + fullPlastic.ToString();
+        trashCounterText.text = trashCounter.ToString() + " / " + trashLimit.ToString();
+
         GOS = FindObjectOfType<GameOverScreen>();
+
+        TC2 = FindObjectOfType<TrashCollect2>();
+        shipTrashCounter = TC2.shipTrashCounter;
+
+        shipTrashCounterText.text = shipTrashCounter.ToString() + " / " + shipTrashLimit.ToString();
 
         //plasticMeter.value = plasticCollected;
         playerOneFuelSlider.value = playerOneFuel;
         playerTwoFuelSlider.value = playerTwoFuel;
-
-        //plasticCounter.text = plasticCollected.ToString() + " / " + fullPlastic.ToString();
-        plasticCounter.text = trashCounter.ToString() + " / " + trashLimit.ToString();
     }
 
     // Update is called once per frame
@@ -101,6 +111,18 @@ public class InGameUI : MonoBehaviour
         playerOneFuelSlider.value = playerOneFuel;
         if (playerOneFuel <= 0)
             EmptyFuelPlayerOne();
+
+        if (playerOneFuel <=100 && playerOneFuel > 66.6)
+            playerOneFuelIcon.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+
+        else if (playerOneFuel <= 66.6 && playerOneFuel > 33.3)
+            playerOneFuelIcon.GetComponent<Image>().color = new Color32(255, 255, 0, 255);
+
+        else if (playerOneFuel <= 33.3)
+            playerOneFuelIcon.GetComponent<Image>().color = new Color32(255, 0, 0, 255);
+
+
+
     }
 
     public void RemoveFuelPlayerTwo()
@@ -119,8 +141,8 @@ public class InGameUI : MonoBehaviour
         playerTwoFuel = fullFuel;
         playerOneFuelSlider.gameObject.SetActive(false);
         playerTwoFuelSlider.gameObject.SetActive(false);
-        //healthIconP1.SetActive(false);
-        //healthIconP2.SetActive(false);
+        playerOneFuelIcon.gameObject.SetActive(false);
+        playerTwoFuelIcon.gameObject.SetActive(false);
         outOfFueltext.text = "You ran out of fuel"; // This should be a variable.
         GOS.GameOver();
     }
@@ -132,9 +154,9 @@ public class InGameUI : MonoBehaviour
         playerTwoFuel = fullFuel;
         playerOneFuelSlider.gameObject.SetActive(false);
         playerTwoFuelSlider.gameObject.SetActive(false);
-        plasticCounter.gameObject.SetActive(false);
-        //healthIconP1.SetActive(false);
-        //healthIconP2.SetActive(false);
+        trashCounterText.gameObject.SetActive(false);
+        playerOneFuelIcon.gameObject.SetActive(false);
+        playerTwoFuelIcon.gameObject.SetActive(false);
         outOfFueltext.text = "You ran out of fuel"; // This should be a variable.
         GOS.GameOver();
     }
@@ -151,10 +173,16 @@ public class InGameUI : MonoBehaviour
     //    plasticCounter.text = plasticCollected.ToString() + " / " + fullPlastic.ToString();
     //}
 
-    public void plasticCounterUpdate()
+    public void trashCounterUpdate()
     {
         trashCounter = RcTD.trashCounter;
         trashLimit = RcTD.trashLimit;
-        plasticCounter.text = trashCounter.ToString() + " / " + trashLimit.ToString();
+        trashCounterText.text = trashCounter.ToString() + " / " + trashLimit.ToString();
+    }
+
+    public void shipTrashCounterUpdate()
+    {
+        shipTrashCounter = TC2.shipTrashCounter;
+        shipTrashCounterText.text = shipTrashCounter.ToString() + " / " + shipTrashLimit.ToString();
     }
 }
