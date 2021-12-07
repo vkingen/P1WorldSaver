@@ -8,7 +8,7 @@ public class GameOverScreen : MonoBehaviour
 
     public GameObject gameOverScreen;
 
-
+    public AudioSource p1, p2;
 
     RaycastTrashDetection raycastTrashDetection;
 
@@ -31,6 +31,8 @@ public class GameOverScreen : MonoBehaviour
 
     public void GameOver()
     {
+        p1.enabled = false;
+        p2.enabled = false;
         gameOverScreen.SetActive(true);
         Time.timeScale = 0f;
 
@@ -39,13 +41,13 @@ public class GameOverScreen : MonoBehaviour
     public void PlayAgain()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
-        //Application.LoadLevel(Application.loadedLevel);
-
-
+    }
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
-        
+
 }
 
 
