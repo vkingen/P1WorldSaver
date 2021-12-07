@@ -62,6 +62,7 @@ GameObject:
   - component: {fileID: 6806130998371178131}
   - component: {fileID: 3533881628286520068}
   - component: {fileID: 7874485405262329708}
+  - component: {fileID: -7900900664002265832}
   m_Layer: 0
   m_Name: Trash_Palette
   m_TagString: Plastic
@@ -113,6 +114,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &-7900900664002265832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6801139490890399741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6163e3af75f87e45bcf4ba88f03e572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1: Player1
+  player2: Player2
+  avoidTrash: AvoidTrash
 --- !u!1 &7901338467745348607
 GameObject:
   m_ObjectHideFlags: 0
