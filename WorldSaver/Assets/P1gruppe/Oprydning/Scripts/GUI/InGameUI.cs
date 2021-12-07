@@ -164,7 +164,13 @@ public class InGameUI : MonoBehaviour
     public void Refuel()
     {
         playerOneFuel = playerOneFuel + refillFuel;
+        if (playerOneFuel >= fullFuel)
+            playerOneFuel = fullFuel;
         playerTwoFuel = playerTwoFuel + refillFuel;
+        if (playerTwoFuel >= fullFuel)
+            playerTwoFuel = fullFuel;
+        Debug.Log(playerOneFuel);
+        Debug.Log("Adding Fuel");
     }
 
     //public void plasticPickUp()

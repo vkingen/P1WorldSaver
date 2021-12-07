@@ -141,7 +141,7 @@ public class RaycastTrashDetection : MonoBehaviour
                         fullCapacity.Play();
                         isResetted = false;
                     }
-                    IGUI.plasticCounterUpdate();
+                    IGUI.trashCounterUpdate();
                 }
             }
         }

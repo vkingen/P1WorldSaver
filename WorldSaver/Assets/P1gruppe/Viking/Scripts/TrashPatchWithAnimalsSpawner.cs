@@ -20,6 +20,8 @@ public class TrashPatchWithAnimalsSpawner : MonoBehaviour
     int objectsToRemove;
     float animationMoveSpeed = 3;
 
+    bool hasAddedFuel = false;
+
 
 
     public int objectsToSpawn = 10;
@@ -64,7 +66,12 @@ public class TrashPatchWithAnimalsSpawner : MonoBehaviour
 
             trashCounterText.gameObject.SetActive(false);
 
-            IGUI.Refuel();
+            if(!hasAddedFuel)
+            {
+                IGUI.Refuel();
+                hasAddedFuel = true;
+            }
+                
         }
     }
 
