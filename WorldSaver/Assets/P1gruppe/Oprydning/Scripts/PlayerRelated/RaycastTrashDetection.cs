@@ -134,7 +134,7 @@ public class RaycastTrashDetection : MonoBehaviour
 
                     trashCounter++;
 
-                    IGUI.plasticPickUp();
+                    IGUI.plasticCounterUpdate();
                 }
             }
             if(hit.transform.tag == "Obstacle")

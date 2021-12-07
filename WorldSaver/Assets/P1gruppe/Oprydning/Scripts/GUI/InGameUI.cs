@@ -16,7 +16,6 @@ public class InGameUI : MonoBehaviour
     public float removeFuel = 1;
     private float fullFuel = 100;
     public float refillFuel = 25;
-    
 
     //public float plasticCollected = 0;
     public int trashCounter;
@@ -27,7 +26,6 @@ public class InGameUI : MonoBehaviour
     public Slider playerOneFuelSlider, playerTwoFuelSlider;
     //public Slider plasticMeter;
     public TMP_Text plasticCounter;
-
     public TMP_Text outOfFueltext;
 
     //public GameObject healthIconP1, healthIconP2;
@@ -153,7 +151,7 @@ public class InGameUI : MonoBehaviour
     //    plasticCounter.text = plasticCollected.ToString() + " / " + fullPlastic.ToString();
     //}
 
-    public void plasticPickUp()
+    public void plasticCounterUpdate()
     {
         trashCounter = RcTD.trashCounter;
         trashLimit = RcTD.trashLimit;
