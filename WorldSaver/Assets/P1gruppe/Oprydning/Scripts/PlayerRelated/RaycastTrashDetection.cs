@@ -6,6 +6,8 @@ public class RaycastTrashDetection : MonoBehaviour
 {
     public static RaycastTrashDetection instance;
 
+    
+
     public AudioSource ropeSound;
     bool ropeIsTearing = false;
     public float ropeTearMaxVolume = 1;
