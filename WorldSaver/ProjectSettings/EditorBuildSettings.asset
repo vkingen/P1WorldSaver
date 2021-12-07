@@ -17,18 +17,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SletteMette/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/P1gruppe/Aske/SampleScene.unity
     guid: 99d4d3492617c7d45b91bf92221cda3a
-  - enabled: 1
+  - enabled: 0
     path: Assets/P1gruppe/Aske/P1Wins.unity
     guid: 504435cf423a9a848860dfc0a9e771fc
-  - enabled: 1
+  - enabled: 0
     path: Assets/P1gruppe/Aske/P2Wins.unity
     guid: 1a95b418f87227f4ba59daa9a6e3f43c
   - enabled: 0
-    path: Assets/P1gruppe/Malte/PasueMenuTestScene.unity
-    guid: b8cbcb6f12c44cf45b072d425bd8793c
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/P1gruppe/Viking/Scenes/Danmark_001.unity
     guid: 9eafca35f63c31547afa522b069bcd0f
