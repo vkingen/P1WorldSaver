@@ -11829,7 +11829,7 @@ PrefabInstance:
     - target: {fileID: 5311604534628607648, guid: ff05d77b7267d384ca6a6ecf5cf1c403, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: fdebbc465e50cbd4d934a119972847c2, type: 2}
+      objectReference: {fileID: 2100000, guid: 96928173d0d2b5e4faada2026de6cff8, type: 2}
     - target: {fileID: 5311604534628607648, guid: ff05d77b7267d384ca6a6ecf5cf1c403, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -16171,6 +16171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Water
       objectReference: {fileID: 0}
+    - target: {fileID: 4372138676211141083, guid: 679abd69d8857534db23a475d9d67f37, type: 3}
+      propertyPath: power
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 679abd69d8857534db23a475d9d67f37, type: 3}
 --- !u!1001 &1430882565
@@ -19916,6 +19920,7 @@ MonoBehaviour:
   playerOneFuel: 100
   playerTwoFuel: 100
   removeFuel: 1
+  refillFuel: 25
   trashCounter: 0
   trashLimit: 0
   playerOneFuelSlider: {fileID: 1116370745}
