@@ -50,8 +50,17 @@ public class RaycastTrashDetection : MonoBehaviour
 
     public void SetLineRendererPos()
     {
-        lR.SetPosition(0, transform.position);
-        lR.SetPosition(1, playerTwo.transform.position);
+        if(!isTeared)
+        {
+            lR.enabled = true;
+            lR.SetPosition(0, transform.position);
+            lR.SetPosition(1, playerTwo.transform.position);
+        }
+        
+        else
+        {
+            lR.enabled = false;
+        }
     }
 
    
