@@ -11,17 +11,14 @@ public class Movement : MonoBehaviour
     //private float playerTwoFuel;
 
     Rigidbody rb;
-    AudioSource aS;
-    public float idlePitch = 0.5f;
-    public float movingPitch = 0.8f;
     public float moveSpeed;
     public float rotateSpeed;
 
     private float vInput;
     private float hInput;
-    bool isMoving = false;
+    public bool isMoving = false;
 
-
+    public GameObject controlsUI;
     
 
     //[Range(0,20)] //Creates a visual sliding bar in the inspector named 'distance'. 
@@ -35,7 +32,6 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
-        aS = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
 
         IGUI = FindObjectOfType<InGameUI>();
@@ -51,10 +47,12 @@ public class Movement : MonoBehaviour
     {
         if(isPlayerOne) //Player1 movement. "Vertical" and "Horizontal" are controls decided in unity's Input Manager.
         {
-            vInput = Input.GetAxis("Vertical") * moveSpeed;
-            hInput = Input.GetAxis("Horizontal") * rotateSpeed;
-            if (vInput != 0 || hInput != 0)
+            vInput = Input.GetAxis("Vertical") * moveSpeed; // vInput is getting the direction of the player and multiplying with moveSpeed
+            hInput = Input.GetAxis("Horizontal") * rotateSpeed; // hInput is getting the rotation of the player and multiplying with rotateSpeed
+            if (vInput != 0 || hInput != 0) // checking if there is any movement or rotation
             {
+                if (controlsUI != null)
+                    Destroy(controlsUI); // Destroy the controls UI when there is movement or rotation in the beginning
                 IGUI.RemoveFuelPlayerOne();
                 isMoving = true;
             }
@@ -65,22 +63,18 @@ public class Movement : MonoBehaviour
         }
         else //Player 2 movement. "Vertical2" and "Horizontal2" are controls decided in unity's Input Manager.
         {
-            vInput = Input.GetAxis("Vertical2") * moveSpeed;
-            hInput = Input.GetAxis("Horizontal2") * rotateSpeed;
-            if (vInput != 0 || hInput != 0)
+            vInput = Input.GetAxis("Vertical2") * moveSpeed; // vInput is getting the direction of the player and multiplying with moveSpeed
+            hInput = Input.GetAxis("Horizontal2") * rotateSpeed; // hInput is getting the rotation of the player and multiplying with rotateSpeed
+            if (vInput != 0 || hInput != 0) // checking if there is any movement or rotation
             {
+                if (controlsUI != null)
+                    Destroy(controlsUI); // Destroy the controls UI when there is movement or rotation in the beginning
                 IGUI.RemoveFuelPlayerTwo();
                 isMoving = true;
             }
             else
                 isMoving = false;
         }
-
-        if(isMoving)
-            aS.pitch = movingPitch;
-        else
-            aS.pitch = idlePitch;
-
     }
 
    

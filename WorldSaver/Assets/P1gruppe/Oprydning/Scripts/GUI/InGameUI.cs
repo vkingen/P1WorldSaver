@@ -10,7 +10,7 @@ public class InGameUI : MonoBehaviour
     public static InGameUI instance;
     RaycastTrashDetection RcTD;
     GameOverScreen GOS;
-    TrashCollect2 TC2;
+    //TrashCollect2 TC2;
 
     public float playerOneFuel = 100;
     public float playerTwoFuel = 100;
@@ -23,15 +23,17 @@ public class InGameUI : MonoBehaviour
     //public float addPlastic = 1;
     //public float fullPlastic = 10;
     public int trashLimit;
-    public int shipTrashCounter;
+    //public int shipTrashCounter;
     //public int shipTrashLimit;
 
     public Slider playerOneFuelSlider, playerTwoFuelSlider;
     public Image playerOneFuelIcon, playerTwoFuelIcon;
+    public Image playerOneFill, playerTwoFill;
     //public Slider plasticMeter;
     public TMP_Text trashCounterText;
-    public TMP_Text shipTrashCounterText;
+    //public TMP_Text shipTrashCounterText;
     //public TMP_Text outOfFueltext;
+    public TMP_Text playerOneFuelText, playerTwoFuelText;
 
     //public GameObject healthIconP1, healthIconP2;
 
@@ -61,8 +63,8 @@ public class InGameUI : MonoBehaviour
 
         GOS = FindObjectOfType<GameOverScreen>();
 
-        TC2 = FindObjectOfType<TrashCollect2>();
-        shipTrashCounter = TC2.shipTrashCounter;
+        //TC2 = FindObjectOfType<TrashCollect2>();
+        //shipTrashCounter = TC2.shipTrashCounter;
 
         //shipTrashCounterText.text = shipTrashCounter.ToString() + " / " + shipTrashLimit.ToString();
 
@@ -109,28 +111,40 @@ public class InGameUI : MonoBehaviour
     {
         playerOneFuel = playerOneFuel - removeFuel * Time.deltaTime;
         playerOneFuelSlider.value = playerOneFuel;
+
+        playerOneFuelText.text = playerOneFuel.ToString("F1") + " %";
+
         if (playerOneFuel <= 0)
             EmptyFuelPlayerOne();
 
         if (playerOneFuel <=100 && playerOneFuel > 66.6)
-            playerOneFuelIcon.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+            playerOneFill.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
 
         else if (playerOneFuel <= 66.6 && playerOneFuel > 33.3)
-            playerOneFuelIcon.GetComponent<Image>().color = new Color32(255, 255, 0, 255);
+            playerOneFill.GetComponent<Image>().color = new Color32(255, 255, 0, 255);
 
         else if (playerOneFuel <= 33.3)
-            playerOneFuelIcon.GetComponent<Image>().color = new Color32(255, 0, 0, 255);
-
-
-
+            playerOneFill.GetComponent<Image>().color = new Color32(255, 0, 0, 255);
     }
 
     public void RemoveFuelPlayerTwo()
     {
         playerTwoFuel = playerTwoFuel - removeFuel * Time.deltaTime;
         playerTwoFuelSlider.value = playerTwoFuel;
+
+        playerTwoFuelText.text = playerTwoFuel.ToString("F1") + " %";
+
         if (playerTwoFuel <= 0)
             EmptyFuelPlayerTwo();
+
+        if (playerTwoFuel <= 100 && playerOneFuel > 66.6)
+            playerTwoFill.GetComponent<Image>().color = new Color32(0, 255, 0, 255);
+
+        else if (playerTwoFuel <= 66.6 && playerOneFuel > 33.3)
+            playerTwoFill.GetComponent<Image>().color = new Color32(255, 255, 0, 255);
+
+        else if (playerTwoFuel <= 33.3)
+            playerTwoFill.GetComponent<Image>().color = new Color32(255, 0, 0, 255);
     }
 
     public void EmptyFuelPlayerOne()
@@ -200,9 +214,9 @@ public class InGameUI : MonoBehaviour
         trashCounterText.text = trashCounter.ToString() + " / " + trashLimit.ToString();
     }
 
-    public void shipTrashCounterUpdate()
-    {
-        //shipTrashCounter = TC2.shipTrashCounter;
-        //shipTrashCounterText.text = shipTrashCounter.ToString() + " / " + shipTrashLimit.ToString();
-    }
+    //public void shipTrashCounterUpdate()
+    //{
+    //    shipTrashCounter = TC2.shipTrashCounter;
+    //    shipTrashCounterText.text = shipTrashCounter.ToString() + " / " + shipTrashLimit.ToString();
+    //}
 }

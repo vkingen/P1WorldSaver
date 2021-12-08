@@ -10,21 +10,25 @@ public class TrashCollect2 : MonoBehaviour
 
     InGameUI IGUI;
 
-    public TMP_Text boatCapacity;
+    WinScreen wS;
+
+    public TMP_Text boatCapacity, totalTrashCollected;
     int range;
     public int boatMaxCapacity = 5;
 
     RaycastTrashDetection rTD;
     public int shipTrashCounter;
+    public int animalsCounter;
 
     public GameObject[] containerArray;
 
     private void Start()
     {
+        wS = FindObjectOfType<WinScreen>();
         IGUI = FindObjectOfType<InGameUI>();
         range = shipTrashCounter / 10;
-        boatCapacity.text = range.ToString() + " / " + boatMaxCapacity.ToString();
-
+        boatCapacity.text = range.ToString() + " / " + boatMaxCapacity.ToString() + " full containers";
+        totalTrashCollected.text = shipTrashCounter.ToString() + "mt trash collected";
         rTD = FindObjectOfType<RaycastTrashDetection>();
     }
 
@@ -34,9 +38,10 @@ public class TrashCollect2 : MonoBehaviour
         if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             shipTrashCounter += rTD.trashCounter;
+            totalTrashCollected.text = shipTrashCounter.ToString() + "mt trash collected";
             rTD.trashCounter = 0;
             IGUI.trashCounterUpdate();
-            IGUI.shipTrashCounterUpdate();
+            //IGUI.shipTrashCounterUpdate();
             Debug.Log("resetRope");
             rTD.isTeared = false;
             rTD.isResetted = true;
@@ -129,10 +134,11 @@ public class TrashCollect2 : MonoBehaviour
                     containerArray[27].SetActive(true);
                     break;
             }
-            boatCapacity.text = range.ToString() + " / " + boatMaxCapacity.ToString();
+            boatCapacity.text = range.ToString() + " / " + boatMaxCapacity.ToString() + " full containers";
 
-            if(range == boatMaxCapacity)
+            if (range == boatMaxCapacity)
             {
+                wS.WinGame();
                 // Change scene?
                 Debug.Log("Change scene and/or show newspaper");
             }
