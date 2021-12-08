@@ -11,17 +11,14 @@ public class Movement : MonoBehaviour
     //private float playerTwoFuel;
 
     Rigidbody rb;
-    AudioSource aS;
-    public float idlePitch = 0.5f;
-    public float movingPitch = 0.8f;
     public float moveSpeed;
     public float rotateSpeed;
 
     private float vInput;
     private float hInput;
-    bool isMoving = false;
+    public bool isMoving = false;
 
-
+    public GameObject controlsUI;
     
 
     //[Range(0,20)] //Creates a visual sliding bar in the inspector named 'distance'. 
@@ -35,7 +32,6 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
-        aS = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
 
         IGUI = FindObjectOfType<InGameUI>();
@@ -55,6 +51,8 @@ public class Movement : MonoBehaviour
             hInput = Input.GetAxis("Horizontal") * rotateSpeed;
             if (vInput != 0 || hInput != 0)
             {
+                if (controlsUI != null)
+                    Destroy(controlsUI);
                 IGUI.RemoveFuelPlayerOne();
                 isMoving = true;
             }
@@ -69,18 +67,14 @@ public class Movement : MonoBehaviour
             hInput = Input.GetAxis("Horizontal2") * rotateSpeed;
             if (vInput != 0 || hInput != 0)
             {
+                if (controlsUI != null)
+                    Destroy(controlsUI);
                 IGUI.RemoveFuelPlayerTwo();
                 isMoving = true;
             }
             else
                 isMoving = false;
         }
-
-        if(isMoving)
-            aS.pitch = movingPitch;
-        else
-            aS.pitch = idlePitch;
-
     }
 
    
