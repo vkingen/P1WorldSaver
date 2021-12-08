@@ -4,22 +4,36 @@ using UnityEngine;
 
 public class RadioFacts : MonoBehaviour
 {
-    AudioSource aS;
+    AudioSource radioFact;
     public AudioClip[] clips;
+    public GameObject radioImage;
+
 
     private void Start()
     {
-        aS = GetComponent<AudioSource>();
+        radioFact = GetComponent<AudioSource>();
         
     }
 
-
-
     public void PlaySound()
     {
-        aS.clip = clips[Random.Range(0, clips.Length)];
-        aS.Play();
+        radioFact.clip = clips[Random.Range(0, clips.Length)];
+        radioFact.Play();
     }
 
+    private void Update()
+    {
+        if(radioFact.isPlaying)
+        {
+            radioImage.SetActive(true);
+
+        }
+        else
+        {
+
+            radioImage.SetActive(false);
+
+        }
+    }
 
 }
