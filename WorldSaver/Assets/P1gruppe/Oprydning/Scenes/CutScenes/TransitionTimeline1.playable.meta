@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:WorldSaver/Assets/P1gruppe/Oprydning/Scenes/CutScenes/TransitionTimeline1.playable.meta
 guid: b9c0144c53931b44a98c51198ed136cb
 NativeFormatImporter:
+=======
+guid: f81359278edccdb4caf3555fef87f9a1
+PrefabImporter:
+>>>>>>> 18e8008df750943f5657a0b7d80dcb2ce8e8f708:WorldSaver/Assets/P1gruppe/Oprydning/MapParts/Essentials/BoatAudioManager.prefab.meta
   externalObjects: {}
   mainObjectFileID: 11400000
   userData: 
