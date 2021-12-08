@@ -42,13 +42,14 @@ public class RaycastTrashDetection : MonoBehaviour
         movementScript = GetComponent<Movement>();
 
         lR = GetComponent<LineRenderer>();
-        lR.startColor = Color.black;
-        lR.endColor = Color.black;
+        lR.startColor = Color.green;
+        lR.endColor = Color.green;
         lR.startWidth = width;
         lR.endWidth = width;
         lR.positionCount = 2;
         lR.useWorldSpace = true;
         //lR.material = new Material(Shader.Find("Sprites/Default"));
+
 
         IGUI = FindObjectOfType<InGameUI>();
         //IGUI.plasticPickUp();
