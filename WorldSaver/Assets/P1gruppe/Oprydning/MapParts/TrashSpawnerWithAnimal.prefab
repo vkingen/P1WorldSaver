@@ -289,8 +289,8 @@ MonoBehaviour:
   - {fileID: 1848792083153201634, guid: c7eb42ffe8f516d4a8e3afc1a8f82a75, type: 3}
   - {fileID: 5969386421858846503, guid: 0feb811a7f2e2ef4c821954df359f918, type: 3}
   animals:
-  - {fileID: 6697397029246383849, guid: 2f5c2f8a9bf31de4da3f5ff694c65244, type: 3}
-  - {fileID: 6747951434849190868, guid: 99f71979f9e94844fb0aea19d1397409, type: 3}
+  - {fileID: 6697397029246383849, guid: 50765bc646f683b4497d3e8ae6102fef, type: 3}
+  - {fileID: 6747951434849190868, guid: 224e1b5b0158a3e46b358ad587f5fc1c, type: 3}
   animalClone: {fileID: 0}
   trashArray: []
   objectsToSpawn: 3
