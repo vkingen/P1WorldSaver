@@ -456,11 +456,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5689748438251125429, guid: fe1f270bdb089224faeb4990700bdb82, type: 3}
   m_PrefabInstance: {fileID: 262216628}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &133747700 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 5689748438251125438, guid: fe1f270bdb089224faeb4990700bdb82, type: 3}
-  m_PrefabInstance: {fileID: 262216628}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &133747705 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5689748438251125433, guid: fe1f270bdb089224faeb4990700bdb82, type: 3}
@@ -1477,11 +1472,11 @@ PrefabInstance:
     - target: {fileID: 1762481220671477566, guid: 2a87046f4f91b5b488193213a66a47a5, type: 3}
       propertyPath: p1
       value: 
-      objectReference: {fileID: 1988214232}
+      objectReference: {fileID: 0}
     - target: {fileID: 1762481220671477566, guid: 2a87046f4f91b5b488193213a66a47a5, type: 3}
       propertyPath: p2
       value: 
-      objectReference: {fileID: 133747700}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a87046f4f91b5b488193213a66a47a5, type: 3}
 --- !u!1001 &725755547
@@ -3569,15 +3564,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 452850, guid: dec903ef1436cb844b7b0b0482bc050b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -422
+      value: -439
       objectReference: {fileID: 0}
     - target: {fileID: 452850, guid: dec903ef1436cb844b7b0b0482bc050b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -51
+      value: -79
       objectReference: {fileID: 0}
     - target: {fileID: 452850, guid: dec903ef1436cb844b7b0b0482bc050b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 477
+      value: 442
       objectReference: {fileID: 0}
     - target: {fileID: 452850, guid: dec903ef1436cb844b7b0b0482bc050b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -135435,11 +135430,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 435756, guid: a346c7be19d41f44fb911c9043372213, type: 3}
   m_PrefabInstance: {fileID: 1944064042}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1988214232 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 5311604534628607651, guid: ff05d77b7267d384ca6a6ecf5cf1c403, type: 3}
-  m_PrefabInstance: {fileID: 141844516}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1991450207
 PrefabInstance:
