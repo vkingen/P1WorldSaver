@@ -24,14 +24,14 @@ public class InGameUI : MonoBehaviour
     //public float fullPlastic = 10;
     public int trashLimit;
     public int shipTrashCounter;
-    public int shipTrashLimit;
+    //public int shipTrashLimit;
 
     public Slider playerOneFuelSlider, playerTwoFuelSlider;
     public Image playerOneFuelIcon, playerTwoFuelIcon;
     //public Slider plasticMeter;
     public TMP_Text trashCounterText;
     public TMP_Text shipTrashCounterText;
-    public TMP_Text outOfFueltext;
+    //public TMP_Text outOfFueltext;
 
     //public GameObject healthIconP1, healthIconP2;
 
@@ -64,7 +64,7 @@ public class InGameUI : MonoBehaviour
         TC2 = FindObjectOfType<TrashCollect2>();
         shipTrashCounter = TC2.shipTrashCounter;
 
-        shipTrashCounterText.text = shipTrashCounter.ToString() + " / " + shipTrashLimit.ToString();
+        //shipTrashCounterText.text = shipTrashCounter.ToString() + " / " + shipTrashLimit.ToString();
 
         //plasticMeter.value = plasticCollected;
         playerOneFuelSlider.value = playerOneFuel;
@@ -135,21 +135,35 @@ public class InGameUI : MonoBehaviour
 
     public void EmptyFuelPlayerOne()
     {
-        
-        Debug.Log("P1 fuel empty");
-        playerOneFuel = fullFuel;
-        playerTwoFuel = fullFuel;
-        playerOneFuelSlider.gameObject.SetActive(false);
-        playerTwoFuelSlider.gameObject.SetActive(false);
-        playerOneFuelIcon.gameObject.SetActive(false);
-        playerTwoFuelIcon.gameObject.SetActive(false);
-        outOfFueltext.text = "You ran out of fuel"; // This should be a variable.
-        GOS.GameOver();
+        FuelIsEmptyMethod();
+        //Debug.Log("P1 fuel empty");
+        //playerOneFuel = fullFuel;
+        //playerTwoFuel = fullFuel;
+        //playerOneFuelSlider.gameObject.SetActive(false);
+        //playerTwoFuelSlider.gameObject.SetActive(false);
+        //playerOneFuelIcon.gameObject.SetActive(false);
+        //playerTwoFuelIcon.gameObject.SetActive(false);
+        ////outOfFueltext.text = "You ran out of fuel"; // This should be a variable.
+        //GOS.GameOver();
     }
 
     public void EmptyFuelPlayerTwo()
     {
-        Debug.Log("P2 fuel empty");
+        FuelIsEmptyMethod();
+        //Debug.Log("P2 fuel empty");
+        //playerOneFuel = fullFuel;
+        //playerTwoFuel = fullFuel;
+        //playerOneFuelSlider.gameObject.SetActive(false);
+        //playerTwoFuelSlider.gameObject.SetActive(false);
+        //trashCounterText.gameObject.SetActive(false);
+        //playerOneFuelIcon.gameObject.SetActive(false);
+        //playerTwoFuelIcon.gameObject.SetActive(false);
+        ////outOfFueltext.text = "You ran out of fuel"; // This should be a variable.
+        //GOS.GameOver();
+    }
+
+    public void FuelIsEmptyMethod()
+    {
         playerOneFuel = fullFuel;
         playerTwoFuel = fullFuel;
         playerOneFuelSlider.gameObject.SetActive(false);
@@ -157,7 +171,7 @@ public class InGameUI : MonoBehaviour
         trashCounterText.gameObject.SetActive(false);
         playerOneFuelIcon.gameObject.SetActive(false);
         playerTwoFuelIcon.gameObject.SetActive(false);
-        outOfFueltext.text = "You ran out of fuel"; // This should be a variable.
+        //outOfFueltext.text = "You ran out of fuel"; // This should be a variable.
         GOS.GameOver();
     }
 
@@ -188,7 +202,7 @@ public class InGameUI : MonoBehaviour
 
     public void shipTrashCounterUpdate()
     {
-        shipTrashCounter = TC2.shipTrashCounter;
-        shipTrashCounterText.text = shipTrashCounter.ToString() + " / " + shipTrashLimit.ToString();
+        //shipTrashCounter = TC2.shipTrashCounter;
+        //shipTrashCounterText.text = shipTrashCounter.ToString() + " / " + shipTrashLimit.ToString();
     }
 }

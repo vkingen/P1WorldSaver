@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 
 public class TrashCollect2 : MonoBehaviour
 {
     public static TrashCollect2 instance;
 
     InGameUI IGUI;
+
+    public TMP_Text boatCapacity;
+    int range;
+    public int boatMaxCapacity = 5;
 
     RaycastTrashDetection rTD;
     public int shipTrashCounter;
@@ -16,6 +22,8 @@ public class TrashCollect2 : MonoBehaviour
     private void Start()
     {
         IGUI = FindObjectOfType<InGameUI>();
+        range = shipTrashCounter / 10;
+        boatCapacity.text = range.ToString() + " / " + boatMaxCapacity.ToString();
 
         rTD = FindObjectOfType<RaycastTrashDetection>();
     }
@@ -33,7 +41,7 @@ public class TrashCollect2 : MonoBehaviour
             rTD.isTeared = false;
             rTD.isResetted = true;
 
-            int range = shipTrashCounter / 10;
+            range = shipTrashCounter / 10;
             switch (range)
             {
                 case 1:
@@ -120,6 +128,13 @@ public class TrashCollect2 : MonoBehaviour
                 case 28:
                     containerArray[27].SetActive(true);
                     break;
+            }
+            boatCapacity.text = range.ToString() + " / " + boatMaxCapacity.ToString();
+
+            if(range == boatMaxCapacity)
+            {
+                // Change scene?
+                Debug.Log("Change scene and/or show newspaper");
             }
         }
     }
