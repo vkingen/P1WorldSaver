@@ -8,7 +8,7 @@ public class GameOverScreen : MonoBehaviour
 
     public GameObject gameOverScreen;
 
-    public AudioSource p1, p2;
+    public AudioSource boatMoveAudio;
 
     RaycastTrashDetection raycastTrashDetection;
 
@@ -31,8 +31,7 @@ public class GameOverScreen : MonoBehaviour
 
     public void GameOver()
     {
-        p1.enabled = false;
-        p2.enabled = false;
+        boatMoveAudio.enabled = false;
         gameOverScreen.SetActive(true);
         Time.timeScale = 0f;
 
