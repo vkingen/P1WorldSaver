@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5039817, g: 0.7965214, b: 0.9949359, a: 1}
+  m_IndirectSpecularColor: {r: 0.50398177, g: 0.7965214, b: 0.9949359, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -133106,6 +133106,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Subtitle canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7114145222733902408, guid: fad67216124a2864488ad604bef2a03b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7114145222733902411, guid: fad67216124a2864488ad604bef2a03b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -133631,6 +133635,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 735985976}
     m_Modifications:
+    - target: {fileID: 5311604534628607710, guid: ff05d77b7267d384ca6a6ecf5cf1c403, type: 3}
+      propertyPath: m_AngularDrag
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1499466175672216, guid: f9dca89f7dd8b4ad8b9b30bee673273f, type: 3}
       propertyPath: m_Name
       value: bridge-mainroad-hill (4)
@@ -133678,10 +133686,6 @@ PrefabInstance:
     - target: {fileID: 4677260119848768, guid: f9dca89f7dd8b4ad8b9b30bee673273f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5311604534628607710, guid: ff05d77b7267d384ca6a6ecf5cf1c403, type: 3}
-      propertyPath: m_AngularDrag
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9dca89f7dd8b4ad8b9b30bee673273f, type: 3}
@@ -137479,6 +137483,80 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9213957781871432018, guid: f6b1cf5fb0c2ad546913afe9f1f90910, type: 3}
   m_PrefabInstance: {fileID: 1366070812}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1367003891
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1367003893}
+  - component: {fileID: 1367003892}
+  - component: {fileID: 1367003894}
+  m_Layer: 0
+  m_Name: SceneChange
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1367003892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367003891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3112e926ebd996c478c5c497bc370ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1367003893
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367003891}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 850.9873, y: 4.493576, z: -85.744965}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 28
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1367003894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367003891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: ea0ab20a25907064f8e430b4cd34611b, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1367003892}
+          m_TargetAssemblyTypeName: FirstLevelSceneChange, Assembly-CSharp
+          m_MethodName: NextScene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &1386907346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -141995,6 +142073,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 735985976}
     m_Modifications:
+    - target: {fileID: 5689748438251125435, guid: fe1f270bdb089224faeb4990700bdb82, type: 3}
+      propertyPath: m_AngularDrag
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1000011356470112, guid: 07fe8896f1716479eb00abe65fd78502, type: 3}
       propertyPath: m_Name
       value: church-medieval
@@ -142054,10 +142136,6 @@ PrefabInstance:
     - target: {fileID: 4000010909528454, guid: 07fe8896f1716479eb00abe65fd78502, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5689748438251125435, guid: fe1f270bdb089224faeb4990700bdb82, type: 3}
-      propertyPath: m_AngularDrag
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07fe8896f1716479eb00abe65fd78502, type: 3}
@@ -142541,6 +142619,8 @@ PlayableDirector:
     value: {fileID: 1231221547}
   - key: {fileID: 7768419186606866195, guid: 1fdb6c3f57dd7024ab1d08a5bd809498, type: 2}
     value: {fileID: 0}
+  - key: {fileID: -5505673115876466079, guid: 1fdb6c3f57dd7024ab1d08a5bd809498, type: 2}
+    value: {fileID: 1367003894}
   m_ExposedReferences:
     m_References:
     - bb4083c681edc73468586ffe59a2646c: {fileID: 2014617893}
