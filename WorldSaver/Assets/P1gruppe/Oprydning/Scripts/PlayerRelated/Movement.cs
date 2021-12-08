@@ -11,15 +11,12 @@ public class Movement : MonoBehaviour
     //private float playerTwoFuel;
 
     Rigidbody rb;
-    AudioSource aS;
-    public float idlePitch = 0.5f;
-    public float movingPitch = 0.8f;
     public float moveSpeed;
     public float rotateSpeed;
 
     private float vInput;
     private float hInput;
-    bool isMoving = false;
+    public bool isMoving = false;
 
     public GameObject controlsUI;
     
@@ -35,7 +32,6 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
-        aS = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
 
         IGUI = FindObjectOfType<InGameUI>();
@@ -79,12 +75,6 @@ public class Movement : MonoBehaviour
             else
                 isMoving = false;
         }
-
-        if(isMoving)
-            aS.pitch = movingPitch;
-        else
-            aS.pitch = idlePitch;
-
     }
 
    
