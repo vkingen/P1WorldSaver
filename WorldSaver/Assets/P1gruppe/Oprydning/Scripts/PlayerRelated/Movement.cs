@@ -47,12 +47,12 @@ public class Movement : MonoBehaviour
     {
         if(isPlayerOne) //Player1 movement. "Vertical" and "Horizontal" are controls decided in unity's Input Manager.
         {
-            vInput = Input.GetAxis("Vertical") * moveSpeed;
-            hInput = Input.GetAxis("Horizontal") * rotateSpeed;
-            if (vInput != 0 || hInput != 0)
+            vInput = Input.GetAxis("Vertical") * moveSpeed; // vInput is getting the direction of the player and multiplying with moveSpeed
+            hInput = Input.GetAxis("Horizontal") * rotateSpeed; // hInput is getting the rotation of the player and multiplying with rotateSpeed
+            if (vInput != 0 || hInput != 0) // checking if there is any movement or rotation
             {
                 if (controlsUI != null)
-                    Destroy(controlsUI);
+                    Destroy(controlsUI); // Destroy the controls UI when there is movement or rotation in the beginning
                 IGUI.RemoveFuelPlayerOne();
                 isMoving = true;
             }
@@ -63,12 +63,12 @@ public class Movement : MonoBehaviour
         }
         else //Player 2 movement. "Vertical2" and "Horizontal2" are controls decided in unity's Input Manager.
         {
-            vInput = Input.GetAxis("Vertical2") * moveSpeed;
-            hInput = Input.GetAxis("Horizontal2") * rotateSpeed;
-            if (vInput != 0 || hInput != 0)
+            vInput = Input.GetAxis("Vertical2") * moveSpeed; // vInput is getting the direction of the player and multiplying with moveSpeed
+            hInput = Input.GetAxis("Horizontal2") * rotateSpeed; // hInput is getting the rotation of the player and multiplying with rotateSpeed
+            if (vInput != 0 || hInput != 0) // checking if there is any movement or rotation
             {
                 if (controlsUI != null)
-                    Destroy(controlsUI);
+                    Destroy(controlsUI); // Destroy the controls UI when there is movement or rotation in the beginning
                 IGUI.RemoveFuelPlayerTwo();
                 isMoving = true;
             }
