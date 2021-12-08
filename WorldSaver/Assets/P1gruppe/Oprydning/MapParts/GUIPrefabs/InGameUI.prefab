@@ -919,14 +919,11 @@ MonoBehaviour:
   refillFuel: 25
   trashCounter: 0
   trashLimit: 0
-  shipTrashCounter: 0
-  shipTrashLimit: 0
   playerOneFuelSlider: {fileID: 4881371801205485037}
   playerTwoFuelSlider: {fileID: 4881371800703986010}
   playerOneFuelIcon: {fileID: 4881371801135318105}
   playerTwoFuelIcon: {fileID: 4881371800123140987}
   trashCounterText: {fileID: 4881371800150029381}
-  shipTrashCounterText: {fileID: 0}
 --- !u!1 &4881371801433965191
 GameObject:
   m_ObjectHideFlags: 0

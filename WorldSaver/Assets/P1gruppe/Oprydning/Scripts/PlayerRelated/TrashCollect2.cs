@@ -36,7 +36,7 @@ public class TrashCollect2 : MonoBehaviour
             shipTrashCounter += rTD.trashCounter;
             rTD.trashCounter = 0;
             IGUI.trashCounterUpdate();
-            IGUI.shipTrashCounterUpdate();
+            //IGUI.shipTrashCounterUpdate();
             Debug.Log("resetRope");
             rTD.isTeared = false;
             rTD.isResetted = true;
