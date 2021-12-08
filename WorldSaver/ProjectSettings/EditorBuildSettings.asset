@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/P1gruppe/Oprydning/Scenes/ArcticMap.unity
     guid: 1eeffec06c6d6a148943257dbaa8783c
+  - enabled: 1
+    path: Assets/P1gruppe/Oprydning/Scenes/TropicalMap.unity
+    guid: 641a7e296ec1a7a4485153cbc74843d9
   m_configObjects: {}
