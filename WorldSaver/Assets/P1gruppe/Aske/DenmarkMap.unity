@@ -767,6 +767,10 @@ PrefabInstance:
       propertyPath: boatCapacity
       value: 
       objectReference: {fileID: 295722760}
+    - target: {fileID: 2097862115097971423, guid: e1684aca873f3f9489aeb3804379d8f5, type: 3}
+      propertyPath: totalTrashCollected
+      value: 
+      objectReference: {fileID: 1990840832}
     - target: {fileID: 2113614210547616652, guid: e1684aca873f3f9489aeb3804379d8f5, type: 3}
       propertyPath: m_Name
       value: ship-cargo
@@ -141265,6 +141269,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6c3f1ab5df08694a8904903f630c367, type: 3}
+--- !u!114 &1990840832 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 66592796, guid: 272ea4af2bf71a045ab0811685aca3c0, type: 3}
+  m_PrefabInstance: {fileID: 2105670135}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1992713519
 PrefabInstance:
   m_ObjectHideFlags: 0
