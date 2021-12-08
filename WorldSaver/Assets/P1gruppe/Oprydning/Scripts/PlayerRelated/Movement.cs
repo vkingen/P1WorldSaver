@@ -9,14 +9,19 @@ public class Movement : MonoBehaviour
     InGameUI IGUI;
     //private float playerOneFuel;
     //private float playerTwoFuel;
-
+   
     Rigidbody rb;
+    [Header("Player Attributes")]
+    [Tooltip("Player movement speed")]
     public float moveSpeed;
+    [Tooltip("Player rotation speed")]
     public float rotateSpeed;
+    [Tooltip("IsMoving bool used in other scripts")]
+    public bool isMoving = false;
 
     private float vInput;
     private float hInput;
-    public bool isMoving = false;
+   
 
     public GameObject controlsUI;
     
