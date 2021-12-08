@@ -6,6 +6,7 @@ using TMPro;
 public class TrashPatchWithAnimalsSpawner : MonoBehaviour
 {
     InGameUI IGUI;
+    TrashCollect2 tC2;
     public Vector3 center;
     public Vector3 size;
     Vector3 rotation;
@@ -29,6 +30,7 @@ public class TrashPatchWithAnimalsSpawner : MonoBehaviour
     public TMP_Text trashCounterText;
     private void Start()
     {
+        tC2 = FindObjectOfType<TrashCollect2>();
         objectsSpawned = objectsToSpawn;
         center = transform.position; // Setting the center variable to this components transforms position (x,y,z)
         animalClone = Instantiate(animals[Random.Range(0, animals.Length)], center, Quaternion.identity); // Spawning a random animal at the center position
@@ -69,6 +71,7 @@ public class TrashPatchWithAnimalsSpawner : MonoBehaviour
             if(!hasAddedFuel)
             {
                 IGUI.Refuel();
+                tC2.animalsCounter++;
                 hasAddedFuel = true;
             }
                 
