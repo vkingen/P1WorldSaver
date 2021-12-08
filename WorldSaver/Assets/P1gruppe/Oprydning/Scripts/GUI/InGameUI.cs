@@ -10,7 +10,7 @@ public class InGameUI : MonoBehaviour
     public static InGameUI instance;
     RaycastTrashDetection RcTD;
     GameOverScreen GOS;
-    TrashCollect2 TC2;
+    //TrashCollect2 TC2;
 
     public float playerOneFuel = 100;
     public float playerTwoFuel = 100;
@@ -23,14 +23,14 @@ public class InGameUI : MonoBehaviour
     //public float addPlastic = 1;
     //public float fullPlastic = 10;
     public int trashLimit;
-    public int shipTrashCounter;
+    //public int shipTrashCounter;
     //public int shipTrashLimit;
 
     public Slider playerOneFuelSlider, playerTwoFuelSlider;
     public Image playerOneFuelIcon, playerTwoFuelIcon;
     //public Slider plasticMeter;
     public TMP_Text trashCounterText;
-    public TMP_Text shipTrashCounterText;
+    //public TMP_Text shipTrashCounterText;
     //public TMP_Text outOfFueltext;
 
     //public GameObject healthIconP1, healthIconP2;
@@ -61,8 +61,8 @@ public class InGameUI : MonoBehaviour
 
         GOS = FindObjectOfType<GameOverScreen>();
 
-        TC2 = FindObjectOfType<TrashCollect2>();
-        shipTrashCounter = TC2.shipTrashCounter;
+        //TC2 = FindObjectOfType<TrashCollect2>();
+        //shipTrashCounter = TC2.shipTrashCounter;
 
         //shipTrashCounterText.text = shipTrashCounter.ToString() + " / " + shipTrashLimit.ToString();
 
@@ -200,9 +200,9 @@ public class InGameUI : MonoBehaviour
         trashCounterText.text = trashCounter.ToString() + " / " + trashLimit.ToString();
     }
 
-    public void shipTrashCounterUpdate()
-    {
-        //shipTrashCounter = TC2.shipTrashCounter;
-        //shipTrashCounterText.text = shipTrashCounter.ToString() + " / " + shipTrashLimit.ToString();
-    }
+    //public void shipTrashCounterUpdate()
+    //{
+    //    shipTrashCounter = TC2.shipTrashCounter;
+    //    shipTrashCounterText.text = shipTrashCounter.ToString() + " / " + shipTrashLimit.ToString();
+    //}
 }
