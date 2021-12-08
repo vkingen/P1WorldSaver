@@ -6,6 +6,8 @@ public class RadioFacts : MonoBehaviour
 {
     AudioSource radioFact;
     public AudioClip[] clips;
+    public GameObject radioImage;
+
 
     private void Start()
     {
@@ -19,5 +21,19 @@ public class RadioFacts : MonoBehaviour
         radioFact.Play();
     }
 
+    private void Update()
+    {
+        if(radioFact.isPlaying)
+        {
+            radioImage.SetActive(true);
+
+        }
+        else
+        {
+
+            radioImage.SetActive(false);
+
+        }
+    }
 
 }
