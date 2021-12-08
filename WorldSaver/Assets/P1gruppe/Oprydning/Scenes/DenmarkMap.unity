@@ -133590,10 +133590,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 735985976}
     m_Modifications:
-    - target: {fileID: 5311604534628607710, guid: ff05d77b7267d384ca6a6ecf5cf1c403, type: 3}
-      propertyPath: m_AngularDrag
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 1499466175672216, guid: f9dca89f7dd8b4ad8b9b30bee673273f, type: 3}
       propertyPath: m_Name
       value: bridge-mainroad-hill (4)
@@ -133641,6 +133637,10 @@ PrefabInstance:
     - target: {fileID: 4677260119848768, guid: f9dca89f7dd8b4ad8b9b30bee673273f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311604534628607710, guid: ff05d77b7267d384ca6a6ecf5cf1c403, type: 3}
+      propertyPath: m_AngularDrag
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9dca89f7dd8b4ad8b9b30bee673273f, type: 3}
@@ -136125,10 +136125,6 @@ PrefabInstance:
       propertyPath: playerTwo
       value: 
       objectReference: {fileID: 808638546850566562}
-    - target: {fileID: 5311604534628607651, guid: ff05d77b7267d384ca6a6ecf5cf1c403, type: 3}
-      propertyPath: m_Volume
-      value: 0.11
-      objectReference: {fileID: 0}
     - target: {fileID: 5311604534628607700, guid: ff05d77b7267d384ca6a6ecf5cf1c403, type: 3}
       propertyPath: m_Name
       value: Player1
@@ -142221,10 +142217,6 @@ PrefabInstance:
     - target: {fileID: 5689748438251125433, guid: fe1f270bdb089224faeb4990700bdb82, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5689748438251125438, guid: fe1f270bdb089224faeb4990700bdb82, type: 3}
-      propertyPath: m_Volume
-      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe1f270bdb089224faeb4990700bdb82, type: 3}
