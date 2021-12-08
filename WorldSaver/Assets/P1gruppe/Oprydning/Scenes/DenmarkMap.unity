@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.50398177, g: 0.7965214, b: 0.9949359, a: 1}
+  m_IndirectSpecularColor: {r: 0.5039817, g: 0.7965214, b: 0.9949359, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1095,6 +1095,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 773504315, guid: 00c1f02032768fd40a79028291a2622c, type: 3}
+      propertyPath: m_text
+      value: Player 1 fuel
+      objectReference: {fileID: 0}
+    - target: {fileID: 835187185283919241, guid: 00c1f02032768fd40a79028291a2622c, type: 3}
+      propertyPath: m_text
+      value: Player 2 fuel
+      objectReference: {fileID: 0}
     - target: {fileID: 4881371800012051487, guid: 00c1f02032768fd40a79028291a2622c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1102,6 +1110,18 @@ PrefabInstance:
     - target: {fileID: 4881371800012051487, guid: 00c1f02032768fd40a79028291a2622c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4881371800150029381, guid: 00c1f02032768fd40a79028291a2622c, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4881371800150029381, guid: 00c1f02032768fd40a79028291a2622c, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4881371800150029381, guid: 00c1f02032768fd40a79028291a2622c, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4881371800599065963, guid: 00c1f02032768fd40a79028291a2622c, type: 3}
       propertyPath: m_AnchorMax.x
@@ -9945,6 +9965,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 735985976}
     m_Modifications:
+    - target: {fileID: 5689748438251125435, guid: fe1f270bdb089224faeb4990700bdb82, type: 3}
+      propertyPath: m_AngularDrag
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1000011356470112, guid: 07fe8896f1716479eb00abe65fd78502, type: 3}
       propertyPath: m_Name
       value: church-medieval
@@ -10004,10 +10028,6 @@ PrefabInstance:
     - target: {fileID: 4000010909528454, guid: 07fe8896f1716479eb00abe65fd78502, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5689748438251125435, guid: fe1f270bdb089224faeb4990700bdb82, type: 3}
-      propertyPath: m_AngularDrag
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07fe8896f1716479eb00abe65fd78502, type: 3}
