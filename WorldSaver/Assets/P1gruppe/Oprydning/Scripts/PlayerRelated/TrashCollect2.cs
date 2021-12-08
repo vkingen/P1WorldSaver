@@ -18,6 +18,7 @@ public class TrashCollect2 : MonoBehaviour
 
     RaycastTrashDetection rTD;
     public int shipTrashCounter;
+    public int animalsCounter;
 
     public GameObject[] containerArray;
 
@@ -26,8 +27,8 @@ public class TrashCollect2 : MonoBehaviour
         wS = FindObjectOfType<WinScreen>();
         IGUI = FindObjectOfType<InGameUI>();
         range = shipTrashCounter / 10;
-        boatCapacity.text = range.ToString() + " / " + boatMaxCapacity.ToString() + " Full Containers";
-        totalTrashCollected.text = shipTrashCounter.ToString() + " Trash Collected";
+        boatCapacity.text = range.ToString() + " / " + boatMaxCapacity.ToString() + " full containers";
+        totalTrashCollected.text = shipTrashCounter.ToString() + "mt trash collected";
         rTD = FindObjectOfType<RaycastTrashDetection>();
     }
 
@@ -37,7 +38,7 @@ public class TrashCollect2 : MonoBehaviour
         if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             shipTrashCounter += rTD.trashCounter;
-            totalTrashCollected.text = shipTrashCounter.ToString() + " Trash Collected";
+            totalTrashCollected.text = shipTrashCounter.ToString() + "mt trash collected";
             rTD.trashCounter = 0;
             IGUI.trashCounterUpdate();
             //IGUI.shipTrashCounterUpdate();
@@ -133,9 +134,9 @@ public class TrashCollect2 : MonoBehaviour
                     containerArray[27].SetActive(true);
                     break;
             }
-            boatCapacity.text = range.ToString() + " / " + boatMaxCapacity.ToString() + " Full Containers";
+            boatCapacity.text = range.ToString() + " / " + boatMaxCapacity.ToString() + " full containers";
 
-            if(range == boatMaxCapacity)
+            if (range == boatMaxCapacity)
             {
                 wS.WinGame();
                 // Change scene?
