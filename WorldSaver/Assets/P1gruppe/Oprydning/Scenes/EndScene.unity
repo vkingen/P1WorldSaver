@@ -702,7 +702,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -390}
+  m_AnchoredPosition: {x: 0, y: -360}
   m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &601941558799713487
@@ -718,7 +718,7 @@ GameObject:
   - component: {fileID: 601941558799713484}
   - component: {fileID: 601941558799713485}
   m_Layer: 5
-  m_Name: Play Next Level
+  m_Name: Continue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -920,7 +920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7882353, g: 0.8345085, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1065,7 +1065,7 @@ GameObject:
   - component: {fileID: 7363795631690378856}
   - component: {fileID: 7363795631690378857}
   m_Layer: 5
-  m_Name: WinText
+  m_Name: Well done Seasavers!
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1277,7 +1277,7 @@ GameObject:
   - component: {fileID: 7843636358568104854}
   - component: {fileID: 7843636358568104855}
   m_Layer: 5
-  m_Name: AnimalsSaved
+  m_Name: CaptainSpermWhale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
