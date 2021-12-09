@@ -31,7 +31,7 @@ public class TrashCollect2 : MonoBehaviour
         IGUI = FindObjectOfType<InGameUI>();
         range = shipTrashCounter / 10;
         boatCapacity.text = range.ToString() + " / " + boatMaxCapacity.ToString() + " full containers";
-        totalTrashCollected.text = shipTrashCounter.ToString() + "mt trash collected";
+        totalTrashCollected.text = shipTrashCounter.ToString() + "tons of trash collected";
         rTD = FindObjectOfType<RaycastTrashDetection>();
     }
 

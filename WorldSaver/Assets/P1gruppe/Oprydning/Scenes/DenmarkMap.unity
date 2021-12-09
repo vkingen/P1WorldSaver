@@ -931,12 +931,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2097862115097971423, guid: e1684aca873f3f9489aeb3804379d8f5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2097862115097971423, guid: e1684aca873f3f9489aeb3804379d8f5, type: 3}
       propertyPath: boatCapacity
       value: 
       objectReference: {fileID: 295722760}
     - target: {fileID: 2097862115097971423, guid: e1684aca873f3f9489aeb3804379d8f5, type: 3}
       propertyPath: boatMaxCapacity
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2097862115097971423, guid: e1684aca873f3f9489aeb3804379d8f5, type: 3}
+      propertyPath: shipTrashCounter
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2097862115097971423, guid: e1684aca873f3f9489aeb3804379d8f5, type: 3}
       propertyPath: totalTrashCollected
