@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5039817, g: 0.7965214, b: 0.9949359, a: 1}
+  m_IndirectSpecularColor: {r: 0.50398177, g: 0.7965214, b: 0.9949359, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -799,6 +799,11 @@ PrefabInstance:
       objectReference: {fileID: 808638546850566564}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e3cfe3feeac58e48b3b4ad32f53f877, type: 3}
+--- !u!82 &82907763 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1215622783706455526, guid: 6e3cfe3feeac58e48b3b4ad32f53f877, type: 3}
+  m_PrefabInstance: {fileID: 82907762}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &86933912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5758,6 +5763,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameOverScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 1762481220671477566, guid: 2a87046f4f91b5b488193213a66a47a5, type: 3}
+      propertyPath: boatMoveAudio
+      value: 
+      objectReference: {fileID: 82907763}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a87046f4f91b5b488193213a66a47a5, type: 3}
 --- !u!1001 &1240361713
