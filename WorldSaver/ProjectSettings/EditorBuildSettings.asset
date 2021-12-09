@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/P1gruppe/Oprydning/Scenes/CutScenes/FinalCutscenes/TransitionOutofArctic.unity
     guid: 00db111c0174e0345ae543252a7fcc8d
   - enabled: 1
+    path: Assets/P1gruppe/Oprydning/Scenes/CutScenes/FinalCutscenes/TransitionIntoTropical.unity
+    guid: 33ff5e57532de9c4793e36034c9e5994
+  - enabled: 1
     path: Assets/P1gruppe/Oprydning/Scenes/TropicalMap.unity
     guid: 641a7e296ec1a7a4485153cbc74843d9
   m_configObjects: {}
