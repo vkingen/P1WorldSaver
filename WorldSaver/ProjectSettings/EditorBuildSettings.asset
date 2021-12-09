@@ -9,9 +9,18 @@ EditorBuildSettings:
     path: Assets/P1gruppe/Oprydning/Scenes/MainMenu.unity
     guid: 0f7e110a3c3a71147a3767c77a1b8484
   - enabled: 1
+    path: Assets/P1gruppe/Oprydning/Scenes/CutScenes/CutsceneIntro.unity
+    guid: ee1f6bb0bfd5eb34499be2c71e410be5
+  - enabled: 1
     path: Assets/P1gruppe/Oprydning/Scenes/DenmarkMap.unity
     guid: f9317e56808e9064c8eb1df476f1e496
   - enabled: 1
+    path: Assets/P1gruppe/Oprydning/Scenes/CutScenes/LevelTwoTransition.unity
+    guid: 16c594dd09b321145b0c45e1d036d5c1
+  - enabled: 1
     path: Assets/P1gruppe/Oprydning/Scenes/ArcticMap.unity
     guid: 1eeffec06c6d6a148943257dbaa8783c
+  - enabled: 1
+    path: Assets/P1gruppe/Oprydning/Scenes/TropicalMap.unity
+    guid: 641a7e296ec1a7a4485153cbc74843d9
   m_configObjects: {}
