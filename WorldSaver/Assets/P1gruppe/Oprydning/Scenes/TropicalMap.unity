@@ -247,9 +247,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7088896827948778769, guid: 272ea4af2bf71a045ab0811685aca3c0, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7088896827948778774, guid: 272ea4af2bf71a045ab0811685aca3c0, type: 3}
       propertyPath: m_Name
       value: BoatUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088896827948778774, guid: 272ea4af2bf71a045ab0811685aca3c0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7088896827948778775, guid: 272ea4af2bf71a045ab0811685aca3c0, type: 3}
       propertyPath: m_Pivot.x
@@ -509,6 +517,10 @@ PrefabInstance:
     - target: {fileID: 786798054489273052, guid: d13a6b2980bca6c4c951a10f9296aa98, type: 3}
       propertyPath: m_Name
       value: WinScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 786798054489273052, guid: d13a6b2980bca6c4c951a10f9296aa98, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d13a6b2980bca6c4c951a10f9296aa98, type: 3}
@@ -852,6 +864,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameOverScreen (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1762481220671477564, guid: 2a87046f4f91b5b488193213a66a47a5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a87046f4f91b5b488193213a66a47a5, type: 3}
 --- !u!114 &823296354 stripped
@@ -943,6 +959,10 @@ PrefabInstance:
     - target: {fileID: 8992920315800167649, guid: 5e376216706aae645bfa261b0b93a80d, type: 3}
       propertyPath: m_Name
       value: Minimap
+      objectReference: {fileID: 0}
+    - target: {fileID: 8992920315800167649, guid: 5e376216706aae645bfa261b0b93a80d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8992920315800167653, guid: 5e376216706aae645bfa261b0b93a80d, type: 3}
       propertyPath: m_Pivot.x
@@ -1559,6 +1579,10 @@ PrefabInstance:
     - target: {fileID: 4881371801376664466, guid: 00c1f02032768fd40a79028291a2622c, type: 3}
       propertyPath: m_Name
       value: InGameUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4881371801376664466, guid: 00c1f02032768fd40a79028291a2622c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4881371801376664477, guid: 00c1f02032768fd40a79028291a2622c, type: 3}
       propertyPath: m_Pivot.x
