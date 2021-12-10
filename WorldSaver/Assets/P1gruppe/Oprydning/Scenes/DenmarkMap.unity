@@ -16594,5 +16594,9 @@ PrefabInstance:
       propertyPath: objectsToDisable.Array.data[2]
       value: 
       objectReference: {fileID: 736247243}
+    - target: {fileID: 7241989536601714278, guid: d13a6b2980bca6c4c951a10f9296aa98, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d13a6b2980bca6c4c951a10f9296aa98, type: 3}
