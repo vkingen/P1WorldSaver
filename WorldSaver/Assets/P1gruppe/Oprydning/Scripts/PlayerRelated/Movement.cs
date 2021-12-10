@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 public class Movement : MonoBehaviour
 {
     InGameUI IGUI;
-    //private float playerOneFuel;
-    //private float playerTwoFuel;
    
     Rigidbody rb;
     [Header("Player Attributes")]
@@ -16,27 +14,23 @@ public class Movement : MonoBehaviour
     public float moveSpeed;
     [Tooltip("Player rotation speed")]
     public float rotateSpeed;
-    [Tooltip("IsMoving bool used in other scripts")]
+    [HideInInspector]
     public bool isMoving = false;
 
     private float vInput;
     private float hInput;
    
-
-    public GameObject controlsUI;
+    GameObject controlsUI;
     
-
-    //[Range(0,20)] //Creates a visual sliding bar in the inspector named 'distance'. 
-    
-
     bool isTeared = false;
 
-    [SerializeField] //Makes the bool public in the inspector in unity but not accessible for other scripts.
+    [SerializeField ,Tooltip("If player one, check this box")] //Makes the bool public in the inspector in unity but not accessible for other scripts.
     bool isPlayerOne;
 
 
     void Start()
     {
+        controlsUI = this.gameObject.transform.Find("PlayerControls").gameObject;
         rb = GetComponent<Rigidbody>();
 
         IGUI = FindObjectOfType<InGameUI>();

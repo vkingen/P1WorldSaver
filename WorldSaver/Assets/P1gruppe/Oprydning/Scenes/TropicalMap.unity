@@ -1051,6 +1051,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1762481220671477566, guid: 2a87046f4f91b5b488193213a66a47a5, type: 3}
+      propertyPath: boatMoveAudio
+      value: 
+      objectReference: {fileID: 1913236312}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a87046f4f91b5b488193213a66a47a5, type: 3}
 --- !u!114 &823296354 stripped
@@ -2118,6 +2122,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff05d77b7267d384ca6a6ecf5cf1c403, type: 3}
+--- !u!82 &1913236312 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1215622783706455526, guid: 6e3cfe3feeac58e48b3b4ad32f53f877, type: 3}
+  m_PrefabInstance: {fileID: 748534599}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1940840195
 GameObject:
   m_ObjectHideFlags: 0

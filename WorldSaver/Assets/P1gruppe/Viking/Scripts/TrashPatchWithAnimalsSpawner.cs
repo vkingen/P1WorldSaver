@@ -7,16 +7,18 @@ public class TrashPatchWithAnimalsSpawner : MonoBehaviour
 {
     InGameUI IGUI;
     TrashCollect2 tC2;
-    public Vector3 center;
+    Vector3 center;
+    [Tooltip("Size of zone to spawn trash")]
     public Vector3 size;
     Vector3 rotation;
 
 
-    public GameObject[] trashPrefab;
-    public GameObject[] animals;
-    public GameObject animalClone;
+    public GameObject[] trashPrefab; // Array of trash objects to spawn
+    public GameObject[] animals; // array of animal objects to spawn
+    GameObject animalClone; 
 
-    public List<GameObject> trashArray;
+    [HideInInspector]
+    public List<GameObject> trashArray; // list of trash that is checked and when empty, the animal is saved
     bool missionComplete = false;
     int objectsToRemove;
     float animationMoveSpeed = 3;
