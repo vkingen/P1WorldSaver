@@ -6247,6 +6247,8 @@ PlayableDirector:
     value: {fileID: 3191556802643409584}
   - key: {fileID: -2780833696524103696, guid: b9c0144c53931b44a98c51198ed136cb, type: 2}
     value: {fileID: 93049382}
+  - key: {fileID: -432999653488102746, guid: b9c0144c53931b44a98c51198ed136cb, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &326693329
@@ -6761,6 +6763,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 735985976}
     m_Modifications:
+    - target: {fileID: 5311604534628607710, guid: ff05d77b7267d384ca6a6ecf5cf1c403, type: 3}
+      propertyPath: m_AngularDrag
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1499466175672216, guid: f9dca89f7dd8b4ad8b9b30bee673273f, type: 3}
       propertyPath: m_Name
       value: bridge-mainroad-hill (4)
@@ -6808,10 +6814,6 @@ PrefabInstance:
     - target: {fileID: 4677260119848768, guid: f9dca89f7dd8b4ad8b9b30bee673273f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5311604534628607710, guid: ff05d77b7267d384ca6a6ecf5cf1c403, type: 3}
-      propertyPath: m_AngularDrag
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9dca89f7dd8b4ad8b9b30bee673273f, type: 3}
@@ -15501,6 +15503,63 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: c8211735a6547d544af737b3edf3378a, type: 3}
+--- !u!1001 &1796071251666740484
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1796071251596281330, guid: 76e5e582ae6a6a445b0ed523107279b0, type: 3}
+      propertyPath: m_Name
+      value: SceneStart
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796071251596281340, guid: 76e5e582ae6a6a445b0ed523107279b0, type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796071251596281340, guid: 76e5e582ae6a6a445b0ed523107279b0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 807.5941
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796071251596281340, guid: 76e5e582ae6a6a445b0ed523107279b0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 109.9115
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796071251596281340, guid: 76e5e582ae6a6a445b0ed523107279b0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -322.51028
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796071251596281340, guid: 76e5e582ae6a6a445b0ed523107279b0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796071251596281340, guid: 76e5e582ae6a6a445b0ed523107279b0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796071251596281340, guid: 76e5e582ae6a6a445b0ed523107279b0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796071251596281340, guid: 76e5e582ae6a6a445b0ed523107279b0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796071251596281340, guid: 76e5e582ae6a6a445b0ed523107279b0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796071251596281340, guid: 76e5e582ae6a6a445b0ed523107279b0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796071251596281340, guid: 76e5e582ae6a6a445b0ed523107279b0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 76e5e582ae6a6a445b0ed523107279b0, type: 3}
 --- !u!23 &3179147680433624415
 MeshRenderer:
   m_ObjectHideFlags: 0
