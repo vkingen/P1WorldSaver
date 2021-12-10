@@ -31,7 +31,7 @@ public class TrashCollect2 : MonoBehaviour
         IGUI = FindObjectOfType<InGameUI>();
         range = shipTrashCounter / 10;
         boatCapacity.text = range.ToString() + " / " + boatMaxCapacity.ToString() + " full containers";
-        totalTrashCollected.text = shipTrashCounter.ToString() + "tons of trash collected";
+        totalTrashCollected.text = shipTrashCounter.ToString() + " tonnes of trash collected";
         rTD = FindObjectOfType<RaycastTrashDetection>();
     }
 
@@ -41,7 +41,7 @@ public class TrashCollect2 : MonoBehaviour
         if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             shipTrashCounter += rTD.trashCounter;
-            totalTrashCollected.text = shipTrashCounter.ToString() + "mt trash collected";
+            totalTrashCollected.text = shipTrashCounter.ToString() + " tonnes of trash collected";
             rTD.trashCounter = 0;
             IGUI.trashCounterUpdate();
             //IGUI.shipTrashCounterUpdate();

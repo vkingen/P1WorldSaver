@@ -25,17 +25,18 @@ public class TrashPatchWithAnimalsSpawner : MonoBehaviour
 
 
 
-    public int objectsToSpawn = 10;
+    int objectsToSpawn = 10;
+    public int maxObjectsTospawn, minObjectsToSpawn;
     int objectsSpawned;
     public TMP_Text trashCounterText;
     private void Start()
     {
+        objectsToSpawn = Random.Range(minObjectsToSpawn, maxObjectsTospawn);
         tC2 = FindObjectOfType<TrashCollect2>();
         objectsSpawned = objectsToSpawn;
         center = transform.position; // Setting the center variable to this components transforms position (x,y,z)
         animalClone = Instantiate(animals[Random.Range(0, animals.Length)], center, Quaternion.identity); // Spawning a random animal at the center position
-        animalClone.transform.position += new Vector3(0, 5, 0); // Offsetting the position of the animal 
-                                                                //animalClone.transform.Rotate(0,0, 180);
+        animalClone.transform.position += new Vector3(0, 2, 0); // Offsetting the position of the animal 
         trashCounterText.text = objectsToSpawn.ToString();
 
 
