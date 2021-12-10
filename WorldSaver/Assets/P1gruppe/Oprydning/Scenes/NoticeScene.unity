@@ -272,7 +272,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Red Button
+  m_Text: 'Blue Button
 
     Main Menu'
 --- !u!222 &51341084
@@ -1221,7 +1221,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Blue Button
+  m_Text: 'Red Button
 
     UN''s Website'
 --- !u!222 &1969270866
