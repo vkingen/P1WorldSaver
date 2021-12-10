@@ -33,7 +33,7 @@ public class WinScreen : MonoBehaviour
             obj.SetActive(false);
         }
         winMenu.SetActive(true);
-        trashCollected.text = tC2.shipTrashCounter.ToString() + "mt trash collected";
+        trashCollected.text = tC2.shipTrashCounter.ToString() + "tonnes of trash collected";
         if(tC2.animalsCounter == 1)
             animalsSaved.text = tC2.animalsCounter.ToString() + " animal saved";
         else
