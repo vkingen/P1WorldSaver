@@ -8,7 +8,9 @@ public class RaycastTrashDetection : MonoBehaviour
 
     
 
-    public AudioSource ropeSound;
+    public AudioSource ropeTearingSound;
+    public AudioSource ropeTearedSpeak;
+    public AudioSource ropeSnap;
     bool ropeIsTearing = false;
     public float ropeTearMaxVolume = 1;
 
@@ -110,15 +112,15 @@ public class RaycastTrashDetection : MonoBehaviour
     {
         if (ropeIsTearing)
         {
-            ropeSound.volume = ropeTearMaxVolume;
+            ropeTearingSound.volume = ropeTearMaxVolume;
         }
         else
         {
-            ropeSound.volume = 0;
+            ropeTearingSound.volume = 0;
         }
 
         if(isTeared)
-            ropeSound.volume = 0;
+            ropeTearingSound.volume = 0;        
 
     }
 
@@ -157,13 +159,13 @@ public class RaycastTrashDetection : MonoBehaviour
             Tear();
             ChangeColor();
             RopeTear();
+            ropeTearedSpeak.Play();
+            ropeSnap.Play();
         }
         else
         {
             RopeTear();
-            lR.enabled = false;
+            lR.enabled = false;            
         }
-
-
     }
 }
