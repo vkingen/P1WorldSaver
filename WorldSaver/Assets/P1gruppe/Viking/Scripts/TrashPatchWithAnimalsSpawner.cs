@@ -25,11 +25,13 @@ public class TrashPatchWithAnimalsSpawner : MonoBehaviour
 
 
 
-    public int objectsToSpawn = 10;
+    int objectsToSpawn = 10;
+    public int maxObjectsTospawn, minObjectsToSpawn;
     int objectsSpawned;
     public TMP_Text trashCounterText;
     private void Start()
     {
+        objectsToSpawn = Random.Range(minObjectsToSpawn, maxObjectsTospawn);
         tC2 = FindObjectOfType<TrashCollect2>();
         objectsSpawned = objectsToSpawn;
         center = transform.position; // Setting the center variable to this components transforms position (x,y,z)
