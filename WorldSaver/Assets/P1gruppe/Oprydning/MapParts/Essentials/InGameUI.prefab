@@ -1148,7 +1148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerOneFuel: 100
   playerTwoFuel: 100
-  removeFuel: 1.5
+  removeFuel: 1
   refillFuel: 25
   trashCounter: 0
   trashLimit: 0
