@@ -4,43 +4,52 @@ using UnityEngine;
 
 public class RaycastTrashDetection : MonoBehaviour
 {
-    public static RaycastTrashDetection instance;
+    public static RaycastTrashDetection instance; // Aske is this used??
+    LineRenderer lR; 
+    Movement movementScript; 
 
-    
+    private AudioSource ropeTearingSound, ropeTearedSpeak, ropeSnap, trashSound, fullCapacity; // Different audio source references
 
-    public AudioSource ropeTearingSound;
-    public AudioSource ropeTearedSpeak;
-    public AudioSource ropeSnap;
-    bool ropeIsTearing = false;
-    public float ropeTearMaxVolume = 1;
+    private bool ropeIsTearing = false; // bool used in other scripts
 
-    public AudioSource trashSound;
-    public AudioSource fullCapacity;
+    [HideInInspector]
+    public int trashCounter; // amount of trash collected
 
-    public GameObject playerTwo;
-    public float maxRange;
+    [HideInInspector]
+    public bool isResetted = true; // reset bool used in other scripts
 
-    public int trashCounter;
-    public int trashLimit = 10;
-    public bool isResetted = true;
-
-    Movement movementScript;
-
-    public float distance;
+    float distance; // distance between players
+    [Header("Raycast and Line Renderer")]
+    [Tooltip("Max distance for the rope")]
     public float distanceToTear;
+    [Tooltip("Width of the rope")]
     public float width = 1f;
+    [Tooltip("Max trash that can be collected")]
+    public int trashLimit = 10;
 
-    LineRenderer lR;
 
-    public Transform p1, p2;
 
-    InGameUI IGUI;
 
+    [Header("Player References")]
+    [Tooltip("Drag both players here (To calculate distance)")]
+    public Transform p1;
+    public Transform p2;
+
+
+    InGameUI IGUI; 
+
+    [HideInInspector]
     public bool isTeared = false;
     
 
     private void Start()
     {
+        ropeTearingSound = this.gameObject.transform.Find("RopeIsTearing").GetComponent<AudioSource>();
+        ropeTearedSpeak = this.gameObject.transform.Find("RopeTearedSpeak").GetComponent<AudioSource>();
+        ropeSnap = this.gameObject.transform.Find("RopeSnap").GetComponent<AudioSource>();
+        trashSound = this.gameObject.transform.Find("TrashCollectSound").GetComponent<AudioSource>();
+        fullCapacity = this.gameObject.transform.Find("MaxCapacitySound").GetComponent<AudioSource>();
+
         movementScript = GetComponent<Movement>();
 
         lR = GetComponent<LineRenderer>();
@@ -63,7 +72,7 @@ public class RaycastTrashDetection : MonoBehaviour
         {
             lR.enabled = true;
             lR.SetPosition(0, transform.position);
-            lR.SetPosition(1, playerTwo.transform.position);
+            lR.SetPosition(1, p2.transform.position);
         }
         
         else
@@ -112,7 +121,7 @@ public class RaycastTrashDetection : MonoBehaviour
     {
         if (ropeIsTearing)
         {
-            ropeTearingSound.volume = ropeTearMaxVolume;
+            ropeTearingSound.volume = 1;
         }
         else
         {
@@ -128,13 +137,12 @@ public class RaycastTrashDetection : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, (playerTwo.transform.position - transform.position), out hit, maxRange))
+        if (Physics.Raycast(transform.position, (p2.position - transform.position), out hit, distanceToTear))
         {
             if  (hit.transform.tag == "Plastic")
             {
                 if (trashCounter < trashLimit)
                 {
-                    //Debug.Log(hit.transform.name + " is picked up");
                     trashSound.Play();
                     Destroy(hit.transform.gameObject);
 

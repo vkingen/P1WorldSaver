@@ -7,16 +7,18 @@ public class TrashPatchWithAnimalsSpawner : MonoBehaviour
 {
     InGameUI IGUI;
     TrashCollect2 tC2;
-    public Vector3 center;
+    Vector3 center;
+    [Tooltip("Size of zone to spawn trash")]
     public Vector3 size;
     Vector3 rotation;
 
 
-    public GameObject[] trashPrefab;
-    public GameObject[] animals;
-    public GameObject animalClone;
+    public GameObject[] trashPrefab; // Array of trash objects to spawn
+    public GameObject[] animals; // array of animal objects to spawn
+    GameObject animalClone; 
 
-    public List<GameObject> trashArray;
+    [HideInInspector]
+    public List<GameObject> trashArray; // list of trash that is checked and when empty, the animal is saved
     bool missionComplete = false;
     int objectsToRemove;
     float animationMoveSpeed = 3;
@@ -25,17 +27,18 @@ public class TrashPatchWithAnimalsSpawner : MonoBehaviour
 
 
 
-    public int objectsToSpawn = 10;
+    int objectsToSpawn = 10;
+    public int maxObjectsTospawn, minObjectsToSpawn;
     int objectsSpawned;
     public TMP_Text trashCounterText;
     private void Start()
     {
+        objectsToSpawn = Random.Range(minObjectsToSpawn, maxObjectsTospawn);
         tC2 = FindObjectOfType<TrashCollect2>();
         objectsSpawned = objectsToSpawn;
         center = transform.position; // Setting the center variable to this components transforms position (x,y,z)
         animalClone = Instantiate(animals[Random.Range(0, animals.Length)], center, Quaternion.identity); // Spawning a random animal at the center position
-        animalClone.transform.position += new Vector3(0, 5, 0); // Offsetting the position of the animal 
-                                                                //animalClone.transform.Rotate(0,0, 180);
+        animalClone.transform.position += new Vector3(0, 2, 0); // Offsetting the position of the animal 
         trashCounterText.text = objectsToSpawn.ToString();
 
 

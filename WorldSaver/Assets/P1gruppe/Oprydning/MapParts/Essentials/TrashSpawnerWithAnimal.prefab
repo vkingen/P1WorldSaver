@@ -293,5 +293,6 @@ MonoBehaviour:
   - {fileID: 6747951434849190868, guid: 224e1b5b0158a3e46b358ad587f5fc1c, type: 3}
   animalClone: {fileID: 0}
   trashArray: []
-  objectsToSpawn: 3
+  maxObjectsTospawn: 3
+  minObjectsToSpawn: 7
   trashCounterText: {fileID: 2759134222016945422}
