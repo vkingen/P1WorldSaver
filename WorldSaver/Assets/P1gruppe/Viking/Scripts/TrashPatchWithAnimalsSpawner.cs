@@ -7,7 +7,7 @@ public class TrashPatchWithAnimalsSpawner : MonoBehaviour
 {
     InGameUI IGUI;
     TrashCollect2 tC2;
-    Vector3 center;
+    Vector3 center; 
     [Tooltip("Size of zone to spawn trash")]
     public Vector3 size;
     Vector3 rotation;
@@ -41,18 +41,14 @@ public class TrashPatchWithAnimalsSpawner : MonoBehaviour
         animalClone.transform.position += new Vector3(0, 2, 0); // Offsetting the position of the animal 
         trashCounterText.text = objectsToSpawn.ToString();
 
-
         IGUI = FindObjectOfType<InGameUI>();
     }
-
-
 
     private void FixedUpdate()
     {
         if (objectsToSpawn > 0)
         {
             objectsToSpawn--;
-
             SpawnTheTrash();
         }
         objectsToRemove = objectsSpawned;
@@ -80,8 +76,6 @@ public class TrashPatchWithAnimalsSpawner : MonoBehaviour
                 
         }
     }
-
-
 
     public void SpawnTheTrash()
     {

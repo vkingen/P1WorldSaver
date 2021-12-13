@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameOverScreen : MonoBehaviour
 {
-
     public GameObject gameOverScreen;
 
     public AudioSource boatMoveAudio;
@@ -17,16 +16,6 @@ public class GameOverScreen : MonoBehaviour
         Time.timeScale = 1f;
         raycastTrashDetection = FindObjectOfType<RaycastTrashDetection>();
         gameOverScreen.SetActive(false);
-    }
-
-    private void Update()
-    {
-        
-        //if (raycastTrashDetection.isTeared == true)
-        //{
-        //    GameOver();
-        //}
-
     }
 
     public void GameOver()
@@ -45,8 +34,6 @@ public class GameOverScreen : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
-
-
 }
 
 

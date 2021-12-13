@@ -27,31 +27,29 @@ public class RaycastTrashDetection : MonoBehaviour
     [Tooltip("Max trash that can be collected")]
     public int trashLimit = 10;
 
-
-
-
     [Header("Player References")]
     [Tooltip("Drag both players here (To calculate distance)")]
     public Transform p1;
     public Transform p2;
-
 
     InGameUI IGUI; 
 
     [HideInInspector]
     public bool isTeared = false;
     
-
     private void Start()
     {
+        // Following 5 lines of code finds Audio Sources through child objects of this gameobject
         ropeTearingSound = this.gameObject.transform.Find("RopeIsTearing").GetComponent<AudioSource>();
         ropeTearedSpeak = this.gameObject.transform.Find("RopeTearedSpeak").GetComponent<AudioSource>();
         ropeSnap = this.gameObject.transform.Find("RopeSnap").GetComponent<AudioSource>();
         trashSound = this.gameObject.transform.Find("TrashCollectSound").GetComponent<AudioSource>();
         fullCapacity = this.gameObject.transform.Find("MaxCapacitySound").GetComponent<AudioSource>();
 
-        movementScript = GetComponent<Movement>();
+        movementScript = GetComponent<Movement>(); // Getting the Movement component
+        IGUI = FindObjectOfType<InGameUI>(); // Finding the InGameUI script in the scene
 
+        // Following lines is setting the line renderer values
         lR = GetComponent<LineRenderer>();
         lR.startColor = Color.green;
         lR.endColor = Color.green;
@@ -59,11 +57,6 @@ public class RaycastTrashDetection : MonoBehaviour
         lR.endWidth = width;
         lR.positionCount = 2;
         lR.useWorldSpace = true;
-        //lR.material = new Material(Shader.Find("Sprites/Default"));
-
-
-        IGUI = FindObjectOfType<InGameUI>();
-        //IGUI.plasticPickUp();
     }
 
     public void SetLineRendererPos()
@@ -74,14 +67,11 @@ public class RaycastTrashDetection : MonoBehaviour
             lR.SetPosition(0, transform.position);
             lR.SetPosition(1, p2.transform.position);
         }
-        
         else
         {
             lR.enabled = false;
         }
     }
-
-   
 
     void Tear() //Measures the distance between the players and enables tearing when 'distance' becomes greater than 'distanceToTear'.
     {
@@ -89,7 +79,6 @@ public class RaycastTrashDetection : MonoBehaviour
         if (distance > distanceToTear && isTeared == false)
         {
             isTeared = true;
-            //Application.LoadLevel(Application.loadedLevel); //temporary
         }
     }
 
@@ -100,14 +89,12 @@ public class RaycastTrashDetection : MonoBehaviour
             ropeIsTearing = false;
             lR.startColor = Color.green;
             lR.endColor = Color.green;
-
         }
         else if (distance > 50 && distance < 65)
         {
             ropeIsTearing = false;
             lR.startColor = Color.yellow;
             lR.endColor = Color.yellow;
-
         }
         else if (distance > 65 && distance < 75)
         {
@@ -129,8 +116,7 @@ public class RaycastTrashDetection : MonoBehaviour
         }
 
         if(isTeared)
-            ropeTearingSound.volume = 0;        
-
+            ropeTearingSound.volume = 0;
     }
 
     void HitDetection()

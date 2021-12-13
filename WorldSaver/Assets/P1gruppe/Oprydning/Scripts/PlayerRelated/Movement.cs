@@ -32,16 +32,9 @@ public class Movement : MonoBehaviour
     {
         controlsUI = this.gameObject.transform.Find("PlayerControls").gameObject;
         rb = GetComponent<Rigidbody>();
-
         IGUI = FindObjectOfType<InGameUI>();
-        //IGUI.ShowUI();
-
-        //playerOneFuel = GameObject.Find("InGameUI").GetComponent<InGameUI>().playerOneFuel;
-        //playerTwoFuel = GameObject.Find("InGameUI").GetComponent<InGameUI>().playerTwoFuel;
-
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(isPlayerOne) //Player1 movement. "Vertical" and "Horizontal" are controls decided in unity's Input Manager.
@@ -76,17 +69,11 @@ public class Movement : MonoBehaviour
         }
     }
 
-   
-
     private void FixedUpdate()
     {
         Vector3 rotation = Vector3.up * hInput; //Decides the rotation with a Vector 3 variable.
-        
         Quaternion angleRot = Quaternion.Euler(rotation * Time.fixedDeltaTime); //Page 194, in C# book
-
         rb.velocity = transform.forward * vInput;
-        //rb.MovePosition(this.transform.position + this.transform.forward * vInput * Time.fixedDeltaTime); //Page 194, in C# book
-
         rb.MoveRotation(rb.rotation * angleRot); //Page 194, in C# book
     }
 }

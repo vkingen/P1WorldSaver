@@ -17,14 +17,12 @@ public class WinScreen : MonoBehaviour
     {
         tC2 = FindObjectOfType<TrashCollect2>();
         winMenu.SetActive(false);//så menuen ikke er der fra start
-
     }
 
     public void StartNextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
     }
-
 
     public void WinGame()//method til at pause
     {
@@ -39,7 +37,5 @@ public class WinScreen : MonoBehaviour
         else
             animalsSaved.text = tC2.animalsCounter.ToString() + " animals saved";
         Time.timeScale = 0f;//sætter alt på pause
-
     }
-
 }
