@@ -14,7 +14,7 @@ public class Trash : MonoBehaviour
         }
         else
         {
-            Destroy(this.gameObject);
+            Destroy(this.gameObject); // Destroy this object if the colllided tag is not equal to the above stated tags
         }
     }
 }

@@ -6,46 +6,43 @@ using TMPro;
 
 public class TrashCollect2 : MonoBehaviour
 {
-    public static TrashCollect2 instance;
+    // public static TrashCollect2 instance;
 
+    // Script references
     InGameUI IGUI;
-
     WinScreen wS;
-
     RadioFacts RF;
+    RaycastTrashDetection rTD;
 
     public TMP_Text boatCapacity, totalTrashCollected;
-    int range;
-    public int boatMaxCapacity = 5;
 
-    RaycastTrashDetection rTD;
+    public int boatMaxCapacity = 5;
     public int shipTrashCounter;
     public int animalsCounter;
+    int range;
 
     public GameObject[] containerArray;
 
     private void Start()
     {
+        // Finding the scripts in the scene
         RF = FindObjectOfType<RadioFacts>();
         wS = FindObjectOfType<WinScreen>();
         IGUI = FindObjectOfType<InGameUI>();
-        range = shipTrashCounter / 10;
-        boatCapacity.text = range.ToString() + " / " + boatMaxCapacity.ToString() + " full containers";
-        totalTrashCollected.text = shipTrashCounter.ToString() + " tonnes of trash collected";
         rTD = FindObjectOfType<RaycastTrashDetection>();
-    }
 
+        boatCapacity.text = range.ToString() + " / " + boatMaxCapacity.ToString() + " full containers"; // Updating the boat capacity text
+        totalTrashCollected.text = shipTrashCounter.ToString() + " tonnes of trash collected"; // Updating the total trash collected text
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             shipTrashCounter += rTD.trashCounter;
-            totalTrashCollected.text = shipTrashCounter.ToString() + " tonnes of trash collected";
-            rTD.trashCounter = 0;
-            IGUI.trashCounterUpdate();
-            //IGUI.shipTrashCounterUpdate();
-            Debug.Log("resetRope");
+            totalTrashCollected.text = shipTrashCounter.ToString() + " tonnes of trash collected"; // Updating the total trash collected text
+            rTD.trashCounter = 0; // resetting the trashcounter of RaycastTrashDetection script
+            IGUI.trashCounterUpdate(); 
             rTD.isTeared = false;
             rTD.isResetted = true;
 
@@ -165,13 +162,11 @@ public class TrashCollect2 : MonoBehaviour
                     RF.PlaySound();
                     break;
             }
-            boatCapacity.text = range.ToString() + " / " + boatMaxCapacity.ToString() + " full containers";
+            boatCapacity.text = range.ToString() + " / " + boatMaxCapacity.ToString() + " full containers"; // Updating the boat capacity text
 
             if (range == boatMaxCapacity)
             {
                 wS.WinGame();
-                // Change scene?
-                Debug.Log("Change scene and/or show newspaper");
             }
         }
     }

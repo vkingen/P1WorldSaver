@@ -56,7 +56,7 @@ public class RaycastTrashDetection : MonoBehaviour
         lR.startWidth = width;
         lR.endWidth = width;
         lR.positionCount = 2;
-        lR.useWorldSpace = true;
+        lR.useWorldSpace = true;    
     }
 
     public void SetLineRendererPos()
@@ -76,7 +76,7 @@ public class RaycastTrashDetection : MonoBehaviour
     void Tear() //Measures the distance between the players and enables tearing when 'distance' becomes greater than 'distanceToTear'.
     {
         distance = Vector3.Distance(p1.position, p2.position); //Measures the distance between the players.
-        if (distance > distanceToTear && isTeared == false)
+        if (distance > distanceToTear && isTeared == false) // if the distance is too far set isTeared to true
         {
             isTeared = true;
         }
@@ -84,19 +84,19 @@ public class RaycastTrashDetection : MonoBehaviour
 
     void ChangeColor()
     {
-        if (distance > 0 && distance < 50)
+        if (distance > 0 && distance < 50) // if distance is in between these values set the line renderer color to green
         {
             ropeIsTearing = false;
             lR.startColor = Color.green;
             lR.endColor = Color.green;
         }
-        else if (distance > 50 && distance < 65)
+        else if (distance > 50 && distance < 65) // if distance is in between these values set the line renderer color to yellow
         {
             ropeIsTearing = false;
             lR.startColor = Color.yellow;
             lR.endColor = Color.yellow;
         }
-        else if (distance > 65 && distance < 75)
+        else if (distance > 65 && distance < 75) // if distance is in between these values set the line renderer color to red
         {
             ropeIsTearing = true;
             lR.startColor = Color.red;
@@ -104,7 +104,7 @@ public class RaycastTrashDetection : MonoBehaviour
         }
     }
 
-    public void RopeTear()
+    public void RopeTear() // This method is to change the volume of rope tearing sound
     {
         if (ropeIsTearing)
         {
@@ -125,18 +125,18 @@ public class RaycastTrashDetection : MonoBehaviour
 
         if (Physics.Raycast(transform.position, (p2.position - transform.position), out hit, distanceToTear))
         {
-            if  (hit.transform.tag == "Plastic")
+            if  (hit.transform.tag == "Plastic") // only detect the tag "Plastic"
             {
                 if (trashCounter < trashLimit)
                 {
-                    trashSound.Play();
-                    Destroy(hit.transform.gameObject);
+                    trashSound.Play(); // Play audio when picked up
+                    Destroy(hit.transform.gameObject); // destroy the hit gameobject
 
-                    trashCounter++;
+                    trashCounter++; // add 1 to the trash counter
                     if (trashCounter == trashLimit && isResetted)
                     {
-                        fullCapacity.Play();
-                        isResetted = false;
+                        fullCapacity.Play(); // play audio when full capacity
+                        isResetted = false; // the player needs to reset this value when delivering the plastic at the cargo ship
                     }
                     IGUI.trashCounterUpdate();
                 }
