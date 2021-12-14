@@ -55,7 +55,6 @@ public class RaycastTrashDetection : MonoBehaviour
         lR.endColor = Color.green;
         lR.startWidth = width;
         lR.endWidth = width;
-        lR.positionCount = 2;
         lR.useWorldSpace = true;    
     }
 

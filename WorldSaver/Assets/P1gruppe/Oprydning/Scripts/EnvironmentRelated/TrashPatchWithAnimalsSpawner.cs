@@ -51,7 +51,7 @@ public class TrashPatchWithAnimalsSpawner : MonoBehaviour
             objectsToSpawn--; // if objectsToSpawn is bigger than 0, then we reduce it by 1 and 
             SpawnTheTrash(); // spawn a peice of trash
         }
-        objectsToRemove = objectsSpawned; 
+        objectsToRemove = objectsSpawned; // before looping through alle the game objects in the list, reset the values
         foreach (var obj in trashArray)
         {
             if (obj == null)
