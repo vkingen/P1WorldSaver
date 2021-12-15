@@ -69,11 +69,11 @@ public class Movement : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private void FixedUpdate() //FixedUpdate runs x amount of times per frame depending on framerate and how many physics frames per second are set in settings
     {
         Vector3 rotation = Vector3.up * hInput; //Decides the rotation with a Vector 3 variable.
-        Quaternion angleRot = Quaternion.Euler(rotation * Time.fixedDeltaTime); //Page 194, in C# book
-        rb.velocity = transform.forward * vInput;
-        rb.MoveRotation(rb.rotation * angleRot); //Page 194, in C# book
+        Quaternion angleRot = Quaternion.Euler(rotation * Time.fixedDeltaTime); //Smoothens the rotation
+        rb.velocity = transform.forward * vInput; //Decides movement forward og backwards
+        rb.MoveRotation(rb.rotation * angleRot); 
     }
 }
