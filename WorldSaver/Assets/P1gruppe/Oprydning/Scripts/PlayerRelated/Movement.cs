@@ -73,7 +73,7 @@ public class Movement : MonoBehaviour
     {
         Vector3 rotation = Vector3.up * hInput; //Decides the rotation with a Vector 3 variable.
         Quaternion angleRot = Quaternion.Euler(rotation * Time.fixedDeltaTime); //Smoothens the rotation
-        rb.velocity = transform.forward * vInput; //Decides movement forward og backwards
-        rb.MoveRotation(rb.rotation * angleRot); 
+        rb.velocity = transform.forward * vInput; //Applies movement forward og backwards
+        rb.MoveRotation(rb.rotation * angleRot); // Applies rotation
     }
 }
