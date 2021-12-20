@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RaycastTrashDetection : MonoBehaviour
 {
-    public static RaycastTrashDetection instance; // Aske is this used??
     LineRenderer lR; 
     Movement movementScript; 
 
