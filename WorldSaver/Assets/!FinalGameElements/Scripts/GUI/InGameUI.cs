@@ -7,7 +7,6 @@ using TMPro;                            //Allows the script to manage TMPro obje
 
 public class InGameUI : MonoBehaviour
 {
-    public static InGameUI instance;    //Makes this script, InGameUI, accessible via other scripts
     RaycastTrashDetection RcTD;         //Makes the script RaycastTrashDetection accessible via the name RcTD
     GameOverScreen GOS;                 //Makes the script GameOverScreen accessible via the name GOS
 
@@ -102,7 +101,7 @@ public class InGameUI : MonoBehaviour
         GOS.GameOver();                                     //Calls the method, GameOver, in the GameOverScript
     }
 
-    public void Refuel()                                    //A method called in ?
+    public void Refuel()                                    //A method called in TrashPatchWithAnimalsSpawner
     {
         playerOneFuel = playerOneFuel + refillFuel;         //Makes the float value of PlayerOneFuel equal to the same + refillFuel
         if (playerOneFuel >= fullFuel)                      //An if statement checking if playerOneFuel is lower or equal to fullFuel
@@ -112,7 +111,7 @@ public class InGameUI : MonoBehaviour
             playerTwoFuel = fullFuel;                       //If the if statement falls true, playerTwoFuel is set equal to fullFuel
     }
 
-    public void trashCounterUpdate()                                                        //A method called in ?
+    public void trashCounterUpdate()                                                        //A method called in RaycastTrashDetection
     {
         trashCounter = RcTD.trashCounter;                                                   //Sets the integer value of trashCounter equal to the integer value of trashCounter in the RcTD script
         trashLimit = RcTD.trashLimit;                                                       //Sets the integer value of trashLimit equal to the integer value of trashLimit in the RcTD script

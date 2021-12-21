@@ -6,8 +6,6 @@ using TMPro;
 
 public class TrashCollect2 : MonoBehaviour
 {
-    // public static TrashCollect2 instance;
-
     // Script references
     InGameUI IGUI;
     WinScreen wS;
