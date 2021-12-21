@@ -8,16 +8,14 @@ public class BoatSound : MonoBehaviour
     public Movement[] players;
     public float movingPitch, idlePitch;
 
-    // Start is called before the first frame update
     void Start()
     {
         aS = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (players[0].isMoving || players[1].isMoving)
+        if (players[0].isMoving || players[1].isMoving) // changing the pitch depending on whether one of the players are moving or not
             aS.pitch = movingPitch;
         else
             aS.pitch = idlePitch;

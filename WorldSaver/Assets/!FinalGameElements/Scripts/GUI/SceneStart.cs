@@ -7,11 +7,7 @@ public class SceneStart : MonoBehaviour
     
     void Start()
     {
-        Time.timeScale = 1f;// starter scenen igen efter at være pauset
+        Time.timeScale = 1f; // Unfreeze at start by setting time scale to 1
 
     }
-
-
-
-    
 }
