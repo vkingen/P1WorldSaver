@@ -69,7 +69,8 @@ public class Movement : MonoBehaviour
         }
     }
 
-    private void FixedUpdate() //FixedUpdate runs x amount of times per frame depending on framerate and how many physics frames per second are set in settings
+    private void FixedUpdate() //FixedUpdate runs x amount of times per frame
+                               //depending on framerate and how many physics frames per second are set in settings
     {
         Vector3 rotation = Vector3.up * hInput; //Decides the rotation with a Vector 3 variable.
         Quaternion angleRot = Quaternion.Euler(rotation * Time.fixedDeltaTime); //Smoothens the rotation
