@@ -6,36 +6,36 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/P1gruppe/Oprydning/Scenes/MainMenu.unity
+    path: Assets/!FinalGameElements/Scenes/MainMenu.unity
     guid: 0f7e110a3c3a71147a3767c77a1b8484
   - enabled: 1
-    path: Assets/P1gruppe/Oprydning/Scenes/CutScenes/FinalCutscenes/CutsceneIntro.unity
+    path: Assets/!FinalGameElements/Scenes/CutScenes/Scenes/CutsceneIntro.unity
     guid: ee1f6bb0bfd5eb34499be2c71e410be5
   - enabled: 1
-    path: Assets/P1gruppe/Oprydning/Scenes/DenmarkMap.unity
+    path: Assets/!FinalGameElements/Scenes/DenmarkMap.unity
     guid: f9317e56808e9064c8eb1df476f1e496
   - enabled: 1
-    path: Assets/P1gruppe/Oprydning/Scenes/CutScenes/FinalCutscenes/TransitionOutofDK.unity
+    path: Assets/!FinalGameElements/Scenes/CutScenes/Scenes/TransitionOutofDK.unity
     guid: 16c594dd09b321145b0c45e1d036d5c1
   - enabled: 1
-    path: Assets/P1gruppe/Oprydning/Scenes/CutScenes/FinalCutscenes/TransitionIntoArctic.unity
+    path: Assets/!FinalGameElements/Scenes/CutScenes/Scenes/TransitionIntoArctic.unity
     guid: 4730ae9e0a636104b9bcb1ce175f374f
   - enabled: 1
-    path: Assets/P1gruppe/Oprydning/Scenes/ArcticMap.unity
+    path: Assets/!FinalGameElements/Scenes/ArcticMap.unity
     guid: 1eeffec06c6d6a148943257dbaa8783c
   - enabled: 1
-    path: Assets/P1gruppe/Oprydning/Scenes/CutScenes/FinalCutscenes/TransitionOutofArctic.unity
+    path: Assets/!FinalGameElements/Scenes/CutScenes/Scenes/TransitionOutofArctic.unity
     guid: 00db111c0174e0345ae543252a7fcc8d
   - enabled: 1
-    path: Assets/P1gruppe/Oprydning/Scenes/CutScenes/FinalCutscenes/TransitionIntoTropical.unity
+    path: Assets/!FinalGameElements/Scenes/CutScenes/Scenes/TransitionIntoTropical.unity
     guid: 33ff5e57532de9c4793e36034c9e5994
   - enabled: 1
-    path: Assets/P1gruppe/Oprydning/Scenes/TropicalMap.unity
+    path: Assets/!FinalGameElements/Scenes/TropicalMap.unity
     guid: 641a7e296ec1a7a4485153cbc74843d9
   - enabled: 1
-    path: Assets/P1gruppe/Oprydning/Scenes/EndScene.unity
+    path: Assets/!FinalGameElements/Scenes/EndScene.unity
     guid: 01c1f78b6f5105146bfe64e59af2ada8
   - enabled: 1
-    path: Assets/P1gruppe/Oprydning/Scenes/NoticeScene.unity
+    path: Assets/!FinalGameElements/Scenes/NoticeScene.unity
     guid: e846a831b8117b14580815b801456168
   m_configObjects: {}

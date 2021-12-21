@@ -8,7 +8,7 @@ public class PauseMenu : MonoBehaviour
     public bool isPaused;
     private void Start()
     {
-        pauseMenu.SetActive(false);//så menuen ikke er der fra start
+        pauseMenu.SetActive(false); // disable the pause menu UI from the start
 
     }
 
@@ -19,7 +19,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)) // if escape is pressed the then change between pause game and resume game
         {
             if (isPaused)
             {
@@ -28,27 +28,24 @@ public class PauseMenu : MonoBehaviour
             else
             {
                 PauseGame();
-            }
-                
+            }  
         }
-       
-
     }
 
 
 
-    public void PauseGame()//method til at pause
+    public void PauseGame() // pause the game method
     {
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0f;//sætter alt på pause
+        pauseMenu.SetActive(true); // enable the pause menu UI
+        Time.timeScale = 0f; // Freeze time
         isPaused = true;
     }
 
 
-    public void ResumeGame()//method til at resume spillet igen
+    public void ResumeGame() // resume the game method
     {
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1f;//sætter spillet igang igen
+        pauseMenu.SetActive(false); // disable the pause menu UI
+        Time.timeScale = 1f; // unfreeze the time
         isPaused = false;
     }
 

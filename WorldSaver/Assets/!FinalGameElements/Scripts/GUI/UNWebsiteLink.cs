@@ -6,6 +6,6 @@ public class UNWebsiteLink : MonoBehaviour
 {
     public void unLink()
     {
-        Application.OpenURL("https://www.un.org/sustainabledevelopment/oceans/");
+        Application.OpenURL("https://www.un.org/sustainabledevelopment/oceans/"); // Opens a link to the UN website
     }
 }
